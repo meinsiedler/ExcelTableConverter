@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 
-namespace METools.LatexTableConverter.ColorStylers
+namespace ExcelTableConverter.LatexTableConverter.ColorStylers
 {
   public abstract class ColorStyler
   {

@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace METools.LatexTableConverter.ColorStylers
+namespace ExcelTableConverter.LatexTableConverter.ColorStylers
 {
   class TextColorStyler : ColorStyler
   {

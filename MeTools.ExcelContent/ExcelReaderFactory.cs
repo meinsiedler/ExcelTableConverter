@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MeTools.ExcelContent.ExtractorDecorators;
+﻿using ExcelTableConverter.ExcelContent.ExtractorDecorators;
 
-namespace MeTools.ExcelContent
+namespace ExcelTableConverter.ExcelContent
 {
   public class ExcelReaderFactory
   {

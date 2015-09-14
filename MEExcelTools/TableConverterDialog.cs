@@ -2,10 +2,8 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
+using ExcelTableConverter.TableConverter;
 using MEExcelTools.Properties;
-using METools.TableConverter;
-using MeTools.ExcelContent;
-using MeTools.ExcelContent.Model;
 using Microsoft.Office.Interop.Excel;
 
 namespace MEExcelTools

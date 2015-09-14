@@ -6,7 +6,7 @@ using Microsoft.Office.Tools.Ribbon;
 
 namespace MEExcelTools
 {
-  public partial class MeTools
+  public partial class ExcelTableConverterRibbon
   {
     private TableConverterDialog _tableConverterDialog;
 

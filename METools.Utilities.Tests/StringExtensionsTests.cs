@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
+﻿using System.Globalization;
 using NUnit.Framework;
 
-namespace METools.Utilities.Tests
+namespace ExcelTableConverter.Utilities.Tests
 {
   [TestFixture]
   public class StringExtensionsTests

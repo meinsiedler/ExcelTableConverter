@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using MeTools.ExcelContent;
-using MeTools.ExcelContent.Model;
+using ExcelTableConverter.ExcelContent;
+using ExcelTableConverter.ExcelContent.Model;
 
-namespace METools.TableConverter
+namespace ExcelTableConverter.TableConverter
 {
   public abstract class BaseTableConverter
   {

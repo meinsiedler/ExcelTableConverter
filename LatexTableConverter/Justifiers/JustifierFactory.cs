@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using METools.Utilities;
-using MeTools.ExcelContent.Model;
+﻿using ExcelTableConverter.ExcelContent.Model;
+using ExcelTableConverter.Utilities;
 
-namespace METools.LatexTableConverter.Justifiers
+namespace ExcelTableConverter.LatexTableConverter.Justifiers
 {
   public static class JustifierFactory
   {

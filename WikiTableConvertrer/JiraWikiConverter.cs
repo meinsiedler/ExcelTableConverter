@@ -1,8 +1,8 @@
 ﻿using System.Text;
-using METools.TableConverter;
-using MeTools.ExcelContent.Model;
+using ExcelTableConverter.ExcelContent.Model;
+using ExcelTableConverter.TableConverter;
 
-namespace METools.WikiTableConverter
+namespace ExcelTableConverter.JiraTableConverter
 {
   public class JiraWikiConverter : BaseTableConverter
   {

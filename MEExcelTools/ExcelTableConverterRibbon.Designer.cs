@@ -1,13 +1,13 @@
 ﻿namespace MEExcelTools
 {
-    partial class MeTools : Microsoft.Office.Tools.Ribbon.RibbonBase
+    partial class ExcelTableConverterRibbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        public MeTools()
+        public ExcelTableConverterRibbon()
             : base(Globals.Factory.GetRibbonFactory())
         {
             InitializeComponent();
@@ -63,9 +63,9 @@
       this.LatexConverterButton.ShowImage = true;
       this.LatexConverterButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.LatexConverterButton_Click);
       // 
-      // MeTools
+      // ExcelTableConverterRibbon
       // 
-      this.Name = "MeTools";
+      this.Name = "ExcelTableConverterRibbon";
       this.RibbonType = "Microsoft.Excel.Workbook";
       this.Tabs.Add(this.METoolsTab);
       this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.METools_Load);
@@ -85,9 +85,9 @@
 
     partial class ThisRibbonCollection
     {
-        internal MeTools METools
+        internal ExcelTableConverterRibbon ExcelTableConverterRibbon
         {
-            get { return this.GetRibbon<MeTools>(); }
+            get { return this.GetRibbon<ExcelTableConverterRibbon>(); }
         }
     }
 }

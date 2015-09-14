@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace METools.LatexTableConverter.BorderStylers
+﻿namespace ExcelTableConverter.LatexTableConverter.BorderStylers
 {
   public class DottedRuleStyler : DashedRuleStyler
   {

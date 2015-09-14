@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using MeTools.ExcelContent.Model;
+using ExcelTableConverter.ExcelContent.Model;
 
-namespace METools.LatexTableConverter.BorderStylers
+namespace ExcelTableConverter.LatexTableConverter.BorderStylers
 {
   public abstract class HorizontalRuleStyler
   {

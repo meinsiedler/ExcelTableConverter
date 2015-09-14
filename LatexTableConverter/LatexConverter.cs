@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using METools.LatexTableConverter.BorderStylers;
-using METools.LatexTableConverter.CellFormaters;
-using METools.LatexTableConverter.Justifiers;
-using METools.TableConverter;
-using MeTools.ExcelContent;
-using MeTools.ExcelContent.Model;
+using ExcelTableConverter.ExcelContent.Model;
+using ExcelTableConverter.LatexTableConverter.BorderStylers;
+using ExcelTableConverter.LatexTableConverter.CellFormaters;
+using ExcelTableConverter.LatexTableConverter.Justifiers;
+using ExcelTableConverter.TableConverter;
 
-namespace METools.LatexTableConverter
+namespace ExcelTableConverter.LatexTableConverter
 {
   public class LatexConverter : BaseTableConverter
   {

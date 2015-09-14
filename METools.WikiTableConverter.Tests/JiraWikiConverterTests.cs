@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using METools.TestsCommon;
+﻿using ExcelTableConverter.TestsCommon;
 using NUnit.Framework;
 
-namespace METools.WikiTableConverter.Tests
+namespace ExcelTableConverter.JiraTableConverter.Tests
 {
   [TestFixture]
   public class JiraWikiConverterTests

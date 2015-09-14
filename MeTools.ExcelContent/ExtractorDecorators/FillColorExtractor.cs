@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MeTools.ExcelContent.Model;
+﻿using ExcelTableConverter.ExcelContent.Model;
 using Microsoft.Office.Interop.Excel;
 
-namespace MeTools.ExcelContent.ExtractorDecorators
+namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
 {
   public class FillColorExtractor : ExtractorDecorator
   {

@@ -1,5 +1,5 @@
-﻿using METools.LatexTableConverter;
-using METools.WikiTableConverter;
+﻿using ExcelTableConverter.JiraTableConverter;
+using ExcelTableConverter.LatexTableConverter;
 
 namespace MEExcelTools
 {

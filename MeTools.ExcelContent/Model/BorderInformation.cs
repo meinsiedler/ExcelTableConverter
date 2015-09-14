@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MeTools.ExcelContent.Model
+namespace ExcelTableConverter.ExcelContent.Model
 {
   [Serializable]
   public class BorderInformation

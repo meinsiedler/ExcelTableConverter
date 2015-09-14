@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using METools.LatexTableConverter.BorderStylers;
-using MeTools.ExcelContent.Model;
+﻿using ExcelTableConverter.ExcelContent.Model;
+using ExcelTableConverter.LatexTableConverter.BorderStylers;
 using NUnit.Framework;
 
-namespace METools.LatexTableConverter.Tests
+namespace ExcelTableConverter.LatexTableConverter.Tests
 {
   [TestFixture]
   class SolidRuleStylerTests

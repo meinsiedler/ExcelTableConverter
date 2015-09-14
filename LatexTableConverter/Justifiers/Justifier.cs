@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace METools.LatexTableConverter.Justifiers
+namespace ExcelTableConverter.LatexTableConverter.Justifiers
 {
   public abstract class Justifier
   {

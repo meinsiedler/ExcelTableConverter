@@ -2,9 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace MeTools.ExcelContent.Model
+namespace ExcelTableConverter.ExcelContent.Model
 {
   public class RowCollection : IEnumerable
   {

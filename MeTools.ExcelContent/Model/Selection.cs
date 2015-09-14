@@ -1,4 +1,4 @@
-﻿namespace MeTools.ExcelContent.Model
+﻿namespace ExcelTableConverter.ExcelContent.Model
 {
   public class Selection
   {

@@ -1,7 +1,7 @@
-﻿using MeTools.ExcelContent.Model;
+﻿using ExcelTableConverter.ExcelContent.Model;
 using Microsoft.Office.Interop.Excel;
 
-namespace MeTools.ExcelContent.ExtractorDecorators
+namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
 {
   public class HorizontalAlignmentExtractor : ExtractorDecorator
   {

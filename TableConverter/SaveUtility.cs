@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace METools.TableConverter
+namespace ExcelTableConverter.TableConverter
 {
   public class SaveUtility
   {

@@ -1,4 +1,4 @@
-﻿namespace METools.LatexTableConverter.EmphTextStylers
+﻿namespace ExcelTableConverter.LatexTableConverter.EmphTextStylers
 {
   public class ItalicTextStyler : EmphTextStyler
   {

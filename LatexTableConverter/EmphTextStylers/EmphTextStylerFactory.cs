@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using MeTools.ExcelContent.Model;
+using ExcelTableConverter.ExcelContent.Model;
 
-namespace METools.LatexTableConverter.EmphTextStylers
+namespace ExcelTableConverter.LatexTableConverter.EmphTextStylers
 {
   public static class EmphTextStylerFactory
   {

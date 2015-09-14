@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{77F14EB5-CAF9-4411-8467-0B8185B1C73B}</ProjectGuid>
+    <ProjectGuid>{F891E848-52FA-4E53-99F3-2E8644A95F89}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>METools.WikiTableConverter.Tests</RootNamespace>
-    <AssemblyName>METools.WikiTableConverter.Tests</AssemblyName>
+    <RootNamespace>ExcelTableConverter.JiraTableConverter</RootNamespace>
+    <AssemblyName>ExcelTableConverter.JiraTableConverter</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\Solution Items\References\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,25 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JiraWikiConverterTests.cs" />
+    <Compile Include="JiraWikiConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MeTools.ExcelContent\MeTools.ExcelContent.csproj">
-      <Project>{809ADF53-7EA4-4B37-A7D6-354861859A8E}</Project>
-      <Name>MeTools.ExcelContent</Name>
+    <ProjectReference Include="..\MeTools.ExcelContent\ExcelTableConverter.ExcelContent.csproj">
+      <Project>{809adf53-7ea4-4b37-a7d6-354861859a8e}</Project>
+      <Name>ExcelTableConverter.ExcelContent</Name>
     </ProjectReference>
-    <ProjectReference Include="..\METools.TestsCommon\METools.TestsCommon.csproj">
-      <Project>{0c74a974-c498-4cdb-b901-a64d030d0fe6}</Project>
-      <Name>METools.TestsCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TableConverter\METools.TableConverter.csproj">
-      <Project>{78CCE9DF-3098-4169-A94F-FB9F68C00605}</Project>
-      <Name>METools.TableConverter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WikiTableConvertrer\METools.WikiTableConverter.csproj">
-      <Project>{f891e848-52fa-4e53-99f3-2e8644a95f89}</Project>
-      <Name>METools.WikiTableConverter</Name>
+    <ProjectReference Include="..\TableConverter\ExcelTableConverter.TableConverter.csproj">
+      <Project>{78cce9df-3098-4169-a94f-fb9f68c00605}</Project>
+      <Name>ExcelTableConverter.TableConverter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

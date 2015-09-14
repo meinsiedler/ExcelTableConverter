@@ -1,4 +1,4 @@
-﻿namespace MeTools.ExcelContent.ExtractorDecorators
+﻿namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
 {
   public abstract class ExtractorDecorator : ExcelReader
   {

@@ -7,8 +7,8 @@
     <ProjectGuid>{0C74A974-C498-4CDB-B901-A64D030D0FE6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>METools.TestsCommon</RootNamespace>
-    <AssemblyName>METools.TestsCommon</AssemblyName>
+    <RootNamespace>ExcelTableConverter.TestsCommon</RootNamespace>
+    <AssemblyName>ExcelTableConverter.TestsCommon</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,9 +43,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MeTools.ExcelContent\MeTools.ExcelContent.csproj">
+    <ProjectReference Include="..\MeTools.ExcelContent\ExcelTableConverter.ExcelContent.csproj">
       <Project>{809adf53-7ea4-4b37-a7d6-354861859a8e}</Project>
-      <Name>MeTools.ExcelContent</Name>
+      <Name>ExcelTableConverter.ExcelContent</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

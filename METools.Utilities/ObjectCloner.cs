@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
-namespace METools.Utilities
+namespace ExcelTableConverter.Utilities
 {
-  using System;
-  using System.IO;
-  using System.Runtime.Serialization;
-  using System.Runtime.Serialization.Formatters.Binary;
-
   /// <summary>
   /// Reference Article http://www.codeproject.com/KB/tips/SerializedObjectCloner.aspx
   /// Provides a method for performing a deep copy of an object.

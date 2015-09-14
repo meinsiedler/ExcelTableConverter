@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace MeTools.ExcelContent.Model
+namespace ExcelTableConverter.ExcelContent.Model
 {
   [Serializable]
   public class Row

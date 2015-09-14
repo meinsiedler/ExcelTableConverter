@@ -8,8 +8,8 @@
     <ProjectGuid>{809ADF53-7EA4-4B37-A7D6-354861859A8E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MeTools.ExcelContent</RootNamespace>
-    <AssemblyName>MeTools.ExcelContent</AssemblyName>
+    <RootNamespace>ExcelTableConverter.ExcelContent</RootNamespace>
+    <AssemblyName>ExcelTableConverter.ExcelContent</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

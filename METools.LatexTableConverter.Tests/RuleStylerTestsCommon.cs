@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MeTools.ExcelContent.Model;
+﻿using System.Collections.Generic;
+using ExcelTableConverter.ExcelContent.Model;
 
-namespace METools.LatexTableConverter.Tests
+namespace ExcelTableConverter.LatexTableConverter.Tests
 {
   class RuleStylerTestsCommon
   {

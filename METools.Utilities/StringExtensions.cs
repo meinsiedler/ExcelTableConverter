@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 
-namespace METools.Utilities
+namespace ExcelTableConverter.Utilities
 {
   public static class StringExtensions
   {

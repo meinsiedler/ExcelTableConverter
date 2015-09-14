@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace METools.LatexTableConverter
+﻿namespace ExcelTableConverter.LatexTableConverter
 {
   partial class ExtendedFeaturesControl
   {
@@ -103,7 +101,7 @@ namespace METools.LatexTableConverter
       // 
       // ColorPackageWarningPicture
       // 
-      this.ColorPackageWarningPicture.Image = global::METools.LatexTableConverter.Properties.Resources.attention;
+      this.ColorPackageWarningPicture.Image = global::ExcelTableConverter.LatexTableConverter.Properties.Resources.attention;
       this.ColorPackageWarningPicture.Location = new System.Drawing.Point(147, 94);
       this.ColorPackageWarningPicture.Name = "ColorPackageWarningPicture";
       this.ColorPackageWarningPicture.Size = new System.Drawing.Size(21, 17);
@@ -114,7 +112,7 @@ namespace METools.LatexTableConverter
       // 
       // BorderPackagesWarningPicture
       // 
-      this.BorderPackagesWarningPicture.Image = global::METools.LatexTableConverter.Properties.Resources.attention;
+      this.BorderPackagesWarningPicture.Image = global::ExcelTableConverter.LatexTableConverter.Properties.Resources.attention;
       this.BorderPackagesWarningPicture.Location = new System.Drawing.Point(191, 212);
       this.BorderPackagesWarningPicture.Name = "BorderPackagesWarningPicture";
       this.BorderPackagesWarningPicture.Size = new System.Drawing.Size(19, 17);

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using METools.LatexTableConverter.ColorStylers;
-using METools.LatexTableConverter.EmphTextStylers;
-using METools.LatexTableConverter.Justifiers;
-using MeTools.ExcelContent.Model;
+﻿using System.Linq;
+using ExcelTableConverter.ExcelContent.Model;
+using ExcelTableConverter.LatexTableConverter.ColorStylers;
+using ExcelTableConverter.LatexTableConverter.EmphTextStylers;
+using ExcelTableConverter.LatexTableConverter.Justifiers;
 
-namespace METools.LatexTableConverter.CellFormaters
+namespace ExcelTableConverter.LatexTableConverter.CellFormaters
 {
   public class AllStylesCellFormatter : ICellFormatter
   {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Office.Interop.Excel;
 
-namespace MeTools.ExcelContent.Model
+namespace ExcelTableConverter.ExcelContent.Model
 {
   public static class ExcelConstants
   {
