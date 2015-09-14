@@ -1,4 +1,4 @@
-﻿namespace MEExcelTools
+﻿namespace ExcelTableConverter.AddIn
 {
     partial class ExcelTableConverterRibbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
@@ -34,19 +34,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-      this.METoolsTab = this.Factory.CreateRibbonTab();
+      this.TabHome = this.Factory.CreateRibbonTab();
       this.TableConverterGroup = this.Factory.CreateRibbonGroup();
       this.LatexConverterButton = this.Factory.CreateRibbonButton();
-      this.METoolsTab.SuspendLayout();
+      this.TabHome.SuspendLayout();
       this.TableConverterGroup.SuspendLayout();
       // 
-      // METoolsTab
+      // TabHome
       // 
-      this.METoolsTab.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-      this.METoolsTab.ControlId.OfficeId = "TabHome";
-      this.METoolsTab.Groups.Add(this.TableConverterGroup);
-      this.METoolsTab.Label = "TabHome";
-      this.METoolsTab.Name = "METoolsTab";
+      this.TabHome.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
+      this.TabHome.ControlId.OfficeId = "TabHome";
+      this.TabHome.Groups.Add(this.TableConverterGroup);
+      this.TabHome.Label = "TabHome";
+      this.TabHome.Name = "TabHome";
       // 
       // TableConverterGroup
       // 
@@ -57,7 +57,7 @@
       // LatexConverterButton
       // 
       this.LatexConverterButton.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-      this.LatexConverterButton.Image = global::MEExcelTools.Properties.Resources.convert_icon;
+      this.LatexConverterButton.Image = global::ExcelTableConverter.AddIn.Properties.Resources.convert_icon;
       this.LatexConverterButton.Label = "Convert to other table format";
       this.LatexConverterButton.Name = "LatexConverterButton";
       this.LatexConverterButton.ShowImage = true;
@@ -67,10 +67,10 @@
       // 
       this.Name = "ExcelTableConverterRibbon";
       this.RibbonType = "Microsoft.Excel.Workbook";
-      this.Tabs.Add(this.METoolsTab);
-      this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.METools_Load);
-      this.METoolsTab.ResumeLayout(false);
-      this.METoolsTab.PerformLayout();
+      this.Tabs.Add(this.TabHome);
+      this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.ExcelTableConveterRibbon_Load);
+      this.TabHome.ResumeLayout(false);
+      this.TabHome.PerformLayout();
       this.TableConverterGroup.ResumeLayout(false);
       this.TableConverterGroup.PerformLayout();
 
@@ -78,7 +78,7 @@
 
         #endregion
 
-        internal Microsoft.Office.Tools.Ribbon.RibbonTab METoolsTab;
+        internal Microsoft.Office.Tools.Ribbon.RibbonTab TabHome;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup TableConverterGroup;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton LatexConverterButton;
     }

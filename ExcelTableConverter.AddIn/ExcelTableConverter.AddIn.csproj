@@ -41,16 +41,16 @@
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <ApplicationVersion>0.9.0.0</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <ProductName>METools.MEExcelTools</ProductName>
-    <PublisherName />
+    <ProductName>ExcelTableConverter</ProductName>
+    <PublisherName>Michael Einsiedler</PublisherName>
     <SupportUrl />
-    <FriendlyName>METools.MEExcelTools</FriendlyName>
-    <OfficeApplicationDescription />
+    <FriendlyName>ExcelTableConverter</FriendlyName>
+    <OfficeApplicationDescription>Converts a selection to different table formats.</OfficeApplicationDescription>
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
@@ -154,13 +154,13 @@
     </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>MEExcelTools_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ExcelTableConverter.AddIn_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>562613AD8D212DC0BC882A292FBC012B07FA9DC2</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>8DBC34A88393A39C51B3CFAE711722B9A896059E</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!--
     This section specifies references for the project.
@@ -250,6 +250,7 @@
     <EmbeddedResource Include="TableConverterDialog.resx">
       <DependentUpon>TableConverterDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ExcelTableConverter.AddIn_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

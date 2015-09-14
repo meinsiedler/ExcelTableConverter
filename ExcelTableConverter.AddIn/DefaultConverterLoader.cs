@@ -1,7 +1,7 @@
 ﻿using ExcelTableConverter.JiraTableConverter;
 using ExcelTableConverter.LatexTableConverter;
 
-namespace MEExcelTools
+namespace ExcelTableConverter.AddIn
 {
   /// <summary>
   /// loads the Converters with new statement - not very clean solution,

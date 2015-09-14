@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using stdole;
 
-namespace MEExcelTools
+namespace ExcelTableConverter.AddIn
 {
   public sealed class ConvertImage : System.Windows.Forms.AxHost
   {

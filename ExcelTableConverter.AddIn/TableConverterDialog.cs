@@ -1,12 +1,10 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
+using ExcelTableConverter.AddIn.Properties;
 using ExcelTableConverter.TableConverter;
-using MEExcelTools.Properties;
-using Microsoft.Office.Interop.Excel;
 
-namespace MEExcelTools
+namespace ExcelTableConverter.AddIn
 {
   public partial class TableConverterDialog : Form
   {

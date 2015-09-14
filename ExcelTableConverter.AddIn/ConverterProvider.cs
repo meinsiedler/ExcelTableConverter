@@ -1,4 +1,4 @@
-﻿namespace MEExcelTools
+﻿namespace ExcelTableConverter.AddIn
 {
   public class ConverterProvider
   {

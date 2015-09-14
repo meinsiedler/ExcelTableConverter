@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Office.Tools.Ribbon;
+﻿using Microsoft.Office.Tools.Ribbon;
 
-namespace MEExcelTools
+namespace ExcelTableConverter.AddIn
 {
   public partial class ExcelTableConverterRibbon
   {
@@ -15,7 +11,7 @@ namespace MEExcelTools
       get { return _tableConverterDialog ?? (_tableConverterDialog = new TableConverterDialog()); }
     }
 
-    private void METools_Load(object sender, RibbonUIEventArgs e)
+    private void ExcelTableConveterRibbon_Load(object sender, RibbonUIEventArgs e)
     {
 
       ConverterProvider.GetConverter().Load();

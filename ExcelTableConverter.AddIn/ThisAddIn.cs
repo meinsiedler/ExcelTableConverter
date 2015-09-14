@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using ExcelTableConverter.ExcelContent.Model;
 using ExcelTableConverter.TableConverter;
-using stdole;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
-using Microsoft.Office.Tools.Excel;
 
 
-namespace MEExcelTools
+namespace ExcelTableConverter.AddIn
 {
   public partial class ThisAddIn
   {
