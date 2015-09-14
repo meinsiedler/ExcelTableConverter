@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE12E998-615E-47E1-9083-985B58CDE4D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>METools.LatexTableConverter.Tests</RootNamespace>
+    <AssemblyName>METools.LatexTableConverter.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\Solution Items\References\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DashedRuleStylerTests.cs" />
+    <Compile Include="LatexConverterTests.cs" />
+    <Compile Include="MixedRuleStylerTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuleStylerTestsCommon.cs" />
+    <Compile Include="SolidRuleStylerTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LatexTableConverter\METools.LatexTableConverter.csproj">
+      <Project>{373b62eb-259d-4f3d-800b-f9eeb6b69639}</Project>
+      <Name>METools.LatexTableConverter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeTools.ExcelContent\MeTools.ExcelContent.csproj">
+      <Project>{809ADF53-7EA4-4B37-A7D6-354861859A8E}</Project>
+      <Name>MeTools.ExcelContent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\METools.TestsCommon\METools.TestsCommon.csproj">
+      <Project>{0c74a974-c498-4cdb-b901-a64d030d0fe6}</Project>
+      <Name>METools.TestsCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\METools.Utilities\METools.Utilities.csproj">
+      <Project>{1dc02672-2201-4f0c-a942-b3a102b3275b}</Project>
+      <Name>METools.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TableConverter\METools.TableConverter.csproj">
+      <Project>{78CCE9DF-3098-4169-A94F-FB9F68C00605}</Project>
+      <Name>METools.TableConverter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
