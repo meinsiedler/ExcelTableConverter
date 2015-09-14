@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{78CCE9DF-3098-4169-A94F-FB9F68C00605}</ProjectGuid>
+    <ProjectGuid>{78D1F183-25BC-4648-9F7B-9960BD905965}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExcelTableConverter.TableConverter</RootNamespace>
-    <AssemblyName>ExcelTableConverter.TableConverter</AssemblyName>
+    <RootNamespace>ExcelTableConverter.Utilities.Tests</RootNamespace>
+    <AssemblyName>ExcelTableConverter.Utilities.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,12 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+    <Reference Include="nunit.framework">
+      <HintPath>..\Solution Items\References\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,15 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseTableConverter.cs" />
-    <Compile Include="IExtendedFeaturesModel.cs" />
+    <Compile Include="StringExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SaveUtility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MeTools.ExcelContent\ExcelTableConverter.ExcelContent.csproj">
-      <Project>{809ADF53-7EA4-4B37-A7D6-354861859A8E}</Project>
-      <Name>ExcelTableConverter.ExcelContent</Name>
+    <ProjectReference Include="..\ExcelTableConverter.Utilities\ExcelTableConverter.Utilities.csproj">
+      <Project>{1dc02672-2201-4f0c-a942-b3a102b3275b}</Project>
+      <Name>ExcelTableConverter.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

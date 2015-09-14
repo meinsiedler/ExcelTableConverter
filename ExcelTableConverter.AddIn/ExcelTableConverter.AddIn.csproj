@@ -271,19 +271,19 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LatexTableConverter\ExcelTableConverter.LatexTableConverter.csproj">
+    <ProjectReference Include="..\ExcelTableConverter.LatexTableConverter\ExcelTableConverter.LatexTableConverter.csproj">
       <Project>{373B62EB-259D-4F3D-800B-F9EEB6B69639}</Project>
       <Name>ExcelTableConverter.LatexTableConverter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MeTools.ExcelContent\ExcelTableConverter.ExcelContent.csproj">
+    <ProjectReference Include="..\ExcelTableConverter.ExcelContent\ExcelTableConverter.ExcelContent.csproj">
       <Project>{809ADF53-7EA4-4B37-A7D6-354861859A8E}</Project>
       <Name>ExcelTableConverter.ExcelContent</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TableConverter\ExcelTableConverter.TableConverter.csproj">
+    <ProjectReference Include="..\ExcelTableConverter.TableConverter\ExcelTableConverter.TableConverter.csproj">
       <Project>{78CCE9DF-3098-4169-A94F-FB9F68C00605}</Project>
       <Name>ExcelTableConverter.TableConverter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WikiTableConvertrer\ExcelTableConverter.JiraTableConverter.csproj">
+    <ProjectReference Include="..\ExcelTableConverter.JiraTableConverter\ExcelTableConverter.JiraTableConverter.csproj">
       <Project>{f891e848-52fa-4e53-99f3-2e8644a95f89}</Project>
       <Name>ExcelTableConverter.JiraTableConverter</Name>
     </ProjectReference>

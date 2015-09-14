@@ -80,15 +80,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MeTools.ExcelContent\ExcelTableConverter.ExcelContent.csproj">
+    <ProjectReference Include="..\ExcelTableConverter.ExcelContent\ExcelTableConverter.ExcelContent.csproj">
       <Project>{809ADF53-7EA4-4B37-A7D6-354861859A8E}</Project>
       <Name>ExcelTableConverter.ExcelContent</Name>
     </ProjectReference>
-    <ProjectReference Include="..\METools.Utilities\ExcelTableConverter.Utilities.csproj">
+    <ProjectReference Include="..\ExcelTableConverter.Utilities\ExcelTableConverter.Utilities.csproj">
       <Project>{1dc02672-2201-4f0c-a942-b3a102b3275b}</Project>
       <Name>ExcelTableConverter.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TableConverter\ExcelTableConverter.TableConverter.csproj">
+    <ProjectReference Include="..\ExcelTableConverter.TableConverter\ExcelTableConverter.TableConverter.csproj">
       <Project>{78CCE9DF-3098-4169-A94F-FB9F68C00605}</Project>
       <Name>ExcelTableConverter.TableConverter</Name>
     </ProjectReference>

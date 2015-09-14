@@ -3,27 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.AddIn", "MEExcelTools\ExcelTableConverter.AddIn.csproj", "{F6B25A35-5D7F-401F-B853-11016453F5C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.AddIn", "ExcelTableConverter.AddIn\ExcelTableConverter.AddIn.csproj", "{F6B25A35-5D7F-401F-B853-11016453F5C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.TableConverter", "TableConverter\ExcelTableConverter.TableConverter.csproj", "{78CCE9DF-3098-4169-A94F-FB9F68C00605}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.TableConverter", "ExcelTableConverter.TableConverter\ExcelTableConverter.TableConverter.csproj", "{78CCE9DF-3098-4169-A94F-FB9F68C00605}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.LatexTableConverter", "LatexTableConverter\ExcelTableConverter.LatexTableConverter.csproj", "{373B62EB-259D-4F3D-800B-F9EEB6B69639}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.LatexTableConverter", "ExcelTableConverter.LatexTableConverter\ExcelTableConverter.LatexTableConverter.csproj", "{373B62EB-259D-4F3D-800B-F9EEB6B69639}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.ExcelContent", "MeTools.ExcelContent\ExcelTableConverter.ExcelContent.csproj", "{809ADF53-7EA4-4B37-A7D6-354861859A8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.ExcelContent", "ExcelTableConverter.ExcelContent\ExcelTableConverter.ExcelContent.csproj", "{809ADF53-7EA4-4B37-A7D6-354861859A8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.JiraTableConverter", "WikiTableConvertrer\ExcelTableConverter.JiraTableConverter.csproj", "{F891E848-52FA-4E53-99F3-2E8644A95F89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.JiraTableConverter", "ExcelTableConverter.JiraTableConverter\ExcelTableConverter.JiraTableConverter.csproj", "{F891E848-52FA-4E53-99F3-2E8644A95F89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.Utilities", "METools.Utilities\ExcelTableConverter.Utilities.csproj", "{1DC02672-2201-4F0C-A942-B3A102B3275B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.Utilities", "ExcelTableConverter.Utilities\ExcelTableConverter.Utilities.csproj", "{1DC02672-2201-4F0C-A942-B3A102B3275B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.Utilities.Tests", "METools.Utilities.Tests\ExcelTableConverter.Utilities.Tests.csproj", "{78D1F183-25BC-4648-9F7B-9960BD905965}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.Utilities.Tests", "ExcelTableConverter.Utilities.Tests\ExcelTableConverter.Utilities.Tests.csproj", "{78D1F183-25BC-4648-9F7B-9960BD905965}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.TestsCommon", "METools.TestsCommon\ExcelTableConverter.TestsCommon.csproj", "{0C74A974-C498-4CDB-B901-A64D030D0FE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.TestsCommon", "ExcelTableConverter.TestsCommon\ExcelTableConverter.TestsCommon.csproj", "{0C74A974-C498-4CDB-B901-A64D030D0FE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.JiraTableConverter.Tests", "METools.WikiTableConverter.Tests\ExcelTableConverter.JiraTableConverter.Tests.csproj", "{77F14EB5-CAF9-4411-8467-0B8185B1C73B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.JiraTableConverter.Tests", "ExcelTableConverter.JiraTableConverter.Tests\ExcelTableConverter.JiraTableConverter.Tests.csproj", "{77F14EB5-CAF9-4411-8467-0B8185B1C73B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.LatexTableConverter.Tests", "METools.LatexTableConverter.Tests\ExcelTableConverter.LatexTableConverter.Tests.csproj", "{AE12E998-615E-47E1-9083-985B58CDE4D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.LatexTableConverter.Tests", "ExcelTableConverter.LatexTableConverter.Tests\ExcelTableConverter.LatexTableConverter.Tests.csproj", "{AE12E998-615E-47E1-9083-985B58CDE4D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.ExcelContent.Tests", "MEExcelTools.ExcelContent.Tests\ExcelTableConverter.ExcelContent.Tests.csproj", "{91E94F04-F6A5-4924-9E36-FED1EE10B25D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.ExcelContent.Tests", "ExcelTableConverter.ExcelContent.Tests\ExcelTableConverter.ExcelContent.Tests.csproj", "{91E94F04-F6A5-4924-9E36-FED1EE10B25D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
