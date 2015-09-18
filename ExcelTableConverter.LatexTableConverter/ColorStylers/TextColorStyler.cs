@@ -2,7 +2,7 @@ using System.Drawing;
 
 namespace ExcelTableConverter.LatexTableConverter.ColorStylers
 {
-  class TextColorStyler : ColorStyler
+  public class TextColorStyler : ColorStyler
   {
     protected override string ColorizeCommand(Color color, string text)
     {
