@@ -31,7 +31,7 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
 
       var expected = @"\cdashline{1-2}[1pt/1pt] \cdashline{4-5} \hhline{~~-~~=}";
 
-      Assert.AreEqual(expected, fullBorders.ToString());
+      Assert.That(fullBorders.ToString(), Is.EqualTo(expected));
     }
 
   }

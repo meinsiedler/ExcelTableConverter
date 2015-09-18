@@ -23,7 +23,7 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
       Row row = _ruleStylerTestsCommon.InitRowTop34NotDashedBottom158NotDashed();
       string actual = _sut.GetTopHorizontalRule(row);
       var expected = @"\hhline{--~~----}";
-      Assert.AreEqual(expected, actual);
+      Assert.That(actual, Is.EqualTo(expected));
     }
 
     [Test]
@@ -32,7 +32,7 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
       Row row = _ruleStylerTestsCommon.InitRowTopAndBottom12Double3None456Solid78None();
       string actual = _sut.GetBottomHorizontalRule(row);
       var expected = @"\hhline{==~---~~}";
-      Assert.AreEqual(expected, actual);
+      Assert.That(actual, Is.EqualTo(expected));
     }
 
     [Test]
@@ -41,7 +41,7 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
       Row row = _ruleStylerTestsCommon.InitRowTopBottom12Solid3DoubleSolid();
       var actual = _sut.GetBottomHorizontalRule(row);
       var expected = @"\hhline{--=}";
-      Assert.AreEqual(expected, actual);
+      Assert.That(actual, Is.EqualTo(expected));
     }
 
     [Test]
@@ -49,7 +49,7 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
     {
       Row row = _ruleStylerTestsCommon.InitRowNoTopAndBottomBorderSet();
       string actual = _sut.GetTopHorizontalRule(row);
-      Assert.AreEqual(string.Empty, actual);
+      Assert.That(actual, Is.EqualTo(string.Empty));
     }
 
     //[Test]
@@ -58,7 +58,7 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
     //  Row row = _ruleStylerTestsCommon.InitRowOnlyFirstCellDashed();
     //  string actual = _sut.GetTopHorizontalRule(row);
     //  var expected = @"\cdashline{1-1} ";
-    //  Assert.AreEqual(expected, actual);
+    //  Assert.That(actual, Is.EqualTo(expected));
     //}
 
     //[Test]
@@ -67,7 +67,7 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
     //  Row row = _ruleStylerTestsCommon.InitRowAllCellsDashed();
     //  string actual = _sut.GetTopHorizontalRule(row);
     //  var expected = @"\cdashline{1-8} ";
-    //  Assert.AreEqual(expected, actual);
+    //  Assert.That(actual, Is.EqualTo(expected));
     //}
   }
 }

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using ExcelTableConverter.ExcelContent.Model;
 
 namespace ExcelTableConverter.TestsCommon
@@ -25,7 +27,12 @@ namespace ExcelTableConverter.TestsCommon
       {
         for (int j = 0; j < maxColumns; j++)
         {
-          s_simpleTable.Rows[i].Columns[j] = new Cell {Text = (i + 1).ToString() + " " + (j + 1).ToString(), TextEmphasis = new List<Cell.EmphasisEnum>()};
+          s_simpleTable.Rows[i].Columns[j] = new Cell
+          {
+            Text = (i + 1).ToString() + " " + (j + 1).ToString(),
+            TextEmphasis = new List<Cell.EmphasisEnum>(),
+            TextColor = Color.Black, FillColor = Color.White,
+          };
         }
       }
     }
