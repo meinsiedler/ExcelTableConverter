@@ -5,16 +5,13 @@ namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
 {
   public class HorizontalAlignmentExtractor : ExtractorDecorator
   {
-    private readonly ExcelReader _excelReader;
-
     public HorizontalAlignmentExtractor(ExcelReader excelReader) : base(excelReader)
     {
-      _excelReader = excelReader;
     }
 
     public override Cell ExtractExcelCellProperty(Range excelCell)
     {
-      Cell cell = _excelReader.ExtractExcelCellProperty(excelCell);
+      Cell cell = ExcelReader.ExtractExcelCellProperty(excelCell);
 
       if (excelCell.HorizontalAlignment == (int)XlHAlign.xlHAlignRight)
       {

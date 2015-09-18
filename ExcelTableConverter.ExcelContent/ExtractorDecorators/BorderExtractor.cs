@@ -6,16 +6,13 @@ namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
 {
   public class BorderExtractor : ExtractorDecorator
   {
-    private readonly ExcelReader _excelReader;
-
     public BorderExtractor(ExcelReader excelReader) : base(excelReader)
     {
-      _excelReader = excelReader;
     }
 
     public override Cell ExtractExcelCellProperty(Range excelCell)
     {
-      Cell cell = _excelReader.ExtractExcelCellProperty(excelCell);
+      Cell cell = ExcelReader.ExtractExcelCellProperty(excelCell);
 
       cell.Borders = GetBorders(excelCell);
       return cell;
