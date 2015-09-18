@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{373B62EB-259D-4F3D-800B-F9EEB6B69639}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExcelTableConverter.LatexTableConverter</RootNamespace>
+    <AssemblyName>ExcelTableConverter.LatexTableConverter</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BorderStylers\DashedRuleStyler.cs" />
+    <Compile Include="BorderStylers\DottedRuleStyler.cs" />
+    <Compile Include="BorderStylers\HorizontalRuleStyler.cs" />
+    <Compile Include="BorderStylers\HorizontalRuleStylerFactory.cs" />
+    <Compile Include="BorderStylers\SolidRuleStyler.cs" />
+    <Compile Include="CellFormaters\ICellFormatter.cs" />
+    <Compile Include="CellFormaters\AllStylesCellFormatter.cs" />
+    <Compile Include="CellFormaters\TextOnlyCellFormatter.cs" />
+    <Compile Include="ColorStylers\ColorStyler.cs" />
+    <Compile Include="ColorStylers\FillColorStyler.cs" />
+    <Compile Include="ColorStylers\TextColorStyler.cs" />
+    <Compile Include="ExtendedFeaturesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExtendedFeaturesControl.Designer.cs">
+      <DependentUpon>ExtendedFeaturesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtendedFeaturesModel.cs" />
+    <Compile Include="Justifiers\Justifier.cs" />
+    <Compile Include="Justifiers\JustifierFactory.cs" />
+    <Compile Include="Justifiers\LeftJustifier.cs" />
+    <Compile Include="Justifiers\CenterJustifier.cs" />
+    <Compile Include="Justifiers\RightJustifier.cs" />
+    <Compile Include="LatexConstants.cs" />
+    <Compile Include="LatexConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EmphTextStylers\BoldTextStyler.cs" />
+    <Compile Include="EmphTextStylers\ItalicTextStyler.cs" />
+    <Compile Include="EmphTextStylers\NoEmphTextStyler.cs" />
+    <Compile Include="EmphTextStylers\EmphTextStyler.cs" />
+    <Compile Include="EmphTextStylers\EmphTextStylerFactory.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExcelTableConverter.ExcelContent\ExcelTableConverter.ExcelContent.csproj">
+      <Project>{809ADF53-7EA4-4B37-A7D6-354861859A8E}</Project>
+      <Name>ExcelTableConverter.ExcelContent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelTableConverter.Utilities\ExcelTableConverter.Utilities.csproj">
+      <Project>{1dc02672-2201-4f0c-a942-b3a102b3275b}</Project>
+      <Name>ExcelTableConverter.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelTableConverter.TableConverter\ExcelTableConverter.TableConverter.csproj">
+      <Project>{78CCE9DF-3098-4169-A94F-FB9F68C00605}</Project>
+      <Name>ExcelTableConverter.TableConverter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExtendedFeaturesControl.resx">
+      <DependentUpon>ExtendedFeaturesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\attention.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attention_gray.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
