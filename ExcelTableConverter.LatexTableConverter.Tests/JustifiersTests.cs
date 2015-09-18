@@ -47,5 +47,44 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
       Assert.That(JustifierFactory.GetJustifier(cell, autoJustify: true), Is.TypeOf<LeftJustifier>());
     }
 
+    [Test]
+    public void JustifierFactory_WithCenterHorizontalAlignmentAndAutoJustify_ReturnsCenterJustifier()
+    {
+      var cell = new Cell {Text = "abc", HorizontalAlignment = Cell.HorizontalAlignmentEnum.Center};
+      Assert.That(JustifierFactory.GetJustifier(cell, autoJustify:true), Is.TypeOf<CenterJustifier>());
+    }
+
+    [Test]
+    public void JustifierFactory_WithCenterHorizontalAlignmentAndNoAutoJustify_ReturnsCenterJustifier()
+    {
+      var cell = new Cell { Text = "abc", HorizontalAlignment = Cell.HorizontalAlignmentEnum.Center };
+      Assert.That(JustifierFactory.GetJustifier(cell, autoJustify:false), Is.TypeOf<CenterJustifier>());
+    }
+
+    [Test]
+    public void RightJustifier_FormatsCellRightAligned()
+    {
+      var rightJustifier = new RightJustifier();
+      Assert.That(rightJustifier.GetAlignment(), Is.EqualTo('r'));
+      Assert.That(rightJustifier.Justify("text"), Is.EqualTo(@"\multicolumn{1}{|r|}{text}"));
+    }
+
+    [Test]
+    public void LeftJustifier_FormatsCellLeftAligned()
+    {
+      var leftJustifier = new LeftJustifier();
+      Assert.That(leftJustifier.GetAlignment(), Is.EqualTo('l'));
+      Assert.That(leftJustifier.Justify("text"), Is.EqualTo(@"\multicolumn{1}{|l|}{text}"));
+    }
+
+    [Test]
+    public void CenterJustifier_FormatsCellCenterAligned()
+    {
+      var centerJustifier = new CenterJustifier();
+      Assert.That(centerJustifier.GetAlignment(), Is.EqualTo('c'));
+      Assert.That(centerJustifier.Justify("text"), Is.EqualTo(@"\multicolumn{1}{|c|}{text}"));
+    }
+
+    
   }
 }

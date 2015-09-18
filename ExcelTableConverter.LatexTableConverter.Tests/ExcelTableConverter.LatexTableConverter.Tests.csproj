@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ColorStylersTests.cs" />
     <Compile Include="DashedRuleStylerTests.cs" />
+    <Compile Include="EmphTextStylerTests.cs" />
     <Compile Include="JustifiersTests.cs" />
     <Compile Include="LatexConverterTests.cs" />
     <Compile Include="MixedRuleStylerTests.cs" />

@@ -39,8 +39,7 @@ namespace ExcelTableConverter.LatexTableConverter.CellFormaters
 
     private string EmphasiseCellValue(Cell cell, string value)
     {
-      var emphTextStylers = EmphTextStylerFactory.GetTextStylers(cell);
-      return emphTextStylers.Aggregate(value, (current, emphTextStyler) => emphTextStyler.Style(current));
+      return EmphTextStylerFactory.GetCombinedTextStyle(cell, value);
     }
 
     private string JustifyCellValue(Cell cell, bool autoJustify, Cell firstRowCell, string value)

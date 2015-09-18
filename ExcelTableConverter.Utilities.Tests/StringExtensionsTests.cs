@@ -47,5 +47,11 @@ namespace ExcelTableConverter.Utilities.Tests
       var result = "1.234,5".IsNumericCurrentCulture();
       Assert.That(result, Is.EqualTo(true));
     }
+
+    [Test]
+    public void IsNumeric_WithBlankBetweenTwoNumbers_ReturnsTrue()
+    {
+      Assert.That("1 1".IsNumericCurrentCulture(), Is.True);
+    }
   }
 }

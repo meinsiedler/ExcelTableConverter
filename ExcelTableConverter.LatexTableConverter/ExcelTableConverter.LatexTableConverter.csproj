@@ -56,6 +56,7 @@
     <Compile Include="ColorStylers\ColorStyler.cs" />
     <Compile Include="ColorStylers\FillColorStyler.cs" />
     <Compile Include="ColorStylers\TextColorStyler.cs" />
+    <Compile Include="EmphTextStylers\CombinedTextStyler.cs" />
     <Compile Include="ExtendedFeaturesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -73,7 +74,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EmphTextStylers\BoldTextStyler.cs" />
     <Compile Include="EmphTextStylers\ItalicTextStyler.cs" />
-    <Compile Include="EmphTextStylers\NoEmphTextStyler.cs" />
     <Compile Include="EmphTextStylers\EmphTextStyler.cs" />
     <Compile Include="EmphTextStylers\EmphTextStylerFactory.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
