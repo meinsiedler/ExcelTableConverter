@@ -251,7 +251,6 @@
     <EmbeddedResource Include="TableConverterDialog.resx">
       <DependentUpon>TableConverterDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ExcelTableConverter.AddIn_TemporaryKey.pfx" />
     <None Include="ExcelTableConverter.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -274,6 +273,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExcelTableConverter.Interop\ExcelTableConverter.Interop.csproj">
+      <Project>{AFADE4FB-426C-4620-BE51-45D2FA0BED2C}</Project>
+      <Name>ExcelTableConverter.Interop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExcelTableConverter.LatexTableConverter\ExcelTableConverter.LatexTableConverter.csproj">
       <Project>{373B62EB-259D-4F3D-800B-F9EEB6B69639}</Project>
       <Name>ExcelTableConverter.LatexTableConverter</Name>
@@ -304,6 +307,14 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>VSTO40;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->

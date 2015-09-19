@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using ExcelTableConverter.ExcelContent.Model;
-using Microsoft.Office.Interop.Excel;
 
 namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
 {
@@ -10,7 +9,7 @@ namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
     {
     }
 
-    public override Cell ExtractExcelCellProperty(Range excelCell)
+    public override Cell ExtractExcelCellProperty(IRange excelCell)
     {
       Cell cell = ExcelReader.ExtractExcelCellProperty(excelCell);
       cell.TextEmphasis = new List<Cell.EmphasisEnum>();
@@ -22,10 +21,6 @@ namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
       if (excelCell.Font.Bold)
       {
         cell.TextEmphasis.Add(Cell.EmphasisEnum.Bold);
-      }
-      if (cell.TextEmphasis.Count == 0)
-      {
-        cell.TextEmphasis.Add(Cell.EmphasisEnum.None);
       }
       return cell;
     }

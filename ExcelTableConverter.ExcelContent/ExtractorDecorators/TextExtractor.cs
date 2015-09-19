@@ -1,5 +1,4 @@
 ﻿using ExcelTableConverter.ExcelContent.Model;
-using Microsoft.Office.Interop.Excel;
 
 namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
 {
@@ -9,7 +8,7 @@ namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
     {
     }
 
-    public override Cell ExtractExcelCellProperty(Range excelCell)
+    public override Cell ExtractExcelCellProperty(IRange excelCell)
     {
       Cell cell = ExcelReader.ExtractExcelCellProperty(excelCell);
       cell.Text = excelCell.Text;
