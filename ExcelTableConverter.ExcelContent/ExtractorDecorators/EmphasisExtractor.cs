@@ -22,10 +22,6 @@ namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
       {
         cell.TextEmphasis.Add(Cell.EmphasisEnum.Bold);
       }
-      if (cell.TextEmphasis.Count == 0)
-      {
-        cell.TextEmphasis.Add(Cell.EmphasisEnum.None);
-      }
       return cell;
     }
   }
