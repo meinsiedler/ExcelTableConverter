@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Office.Interop.Excel;
+﻿using Microsoft.Office.Interop.Excel;
+using IFont = ExcelTableConverter.ExcelContent.Model.IFont;
 
-namespace ExcelTableConverter.ExcelContent.Model.InteropWrappers
+namespace ExcelTableConverter.Interop.InteropWrappers
 {
   public class FontInteropWrapper : IFont
   {
@@ -30,8 +26,8 @@ namespace ExcelTableConverter.ExcelContent.Model.InteropWrappers
 
     public int OleColor
     {
-      get { return _interopFont.Color; }
-      set { _interopFont.Color = value; }
+      get { return (int)_interopFont.Color; }
+      set { _interopFont.Color = (double)value; }
     }
   }
 }

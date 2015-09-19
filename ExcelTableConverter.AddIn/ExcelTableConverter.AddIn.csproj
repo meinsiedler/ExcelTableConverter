@@ -273,6 +273,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExcelTableConverter.Interop\ExcelTableConverter.Interop.csproj">
+      <Project>{AFADE4FB-426C-4620-BE51-45D2FA0BED2C}</Project>
+      <Name>ExcelTableConverter.Interop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExcelTableConverter.LatexTableConverter\ExcelTableConverter.LatexTableConverter.csproj">
       <Project>{373B62EB-259D-4F3D-800B-F9EEB6B69639}</Project>
       <Name>ExcelTableConverter.LatexTableConverter</Name>

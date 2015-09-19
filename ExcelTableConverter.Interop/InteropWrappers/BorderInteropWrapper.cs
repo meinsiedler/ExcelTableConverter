@@ -1,6 +1,8 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿using ExcelTableConverter.ExcelContent.Model;
+using Microsoft.Office.Interop.Excel;
+using IBorder = ExcelTableConverter.ExcelContent.Model.IBorder;
 
-namespace ExcelTableConverter.ExcelContent.Model.InteropWrappers
+namespace ExcelTableConverter.Interop.InteropWrappers
 {
   public class BorderInteropWrapper : IBorder
   {

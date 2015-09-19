@@ -1,8 +1,12 @@
 ﻿using System.Collections.Generic;
-using ExcelTableConverter.ExcelContent.InteropConverter;
+using ExcelTableConverter.ExcelContent.Model;
+using ExcelTableConverter.Interop.InteropConverter;
 using Microsoft.Office.Interop.Excel;
+using IBorder = ExcelTableConverter.ExcelContent.Model.IBorder;
+using IFont = ExcelTableConverter.ExcelContent.Model.IFont;
+using IRange = ExcelTableConverter.ExcelContent.Model.IRange;
 
-namespace ExcelTableConverter.ExcelContent.Model.InteropWrappers
+namespace ExcelTableConverter.Interop.InteropWrappers
 {
   public class RangeInteropWrapper : IRange
   {
@@ -15,7 +19,7 @@ namespace ExcelTableConverter.ExcelContent.Model.InteropWrappers
 
     public IRange this[int rowIndex, int columnIndex]
     {
-      get { return new RangeInteropWrapper(_interopRange)[rowIndex, columnIndex]; }
+      get { return new RangeInteropWrapper(_interopRange[rowIndex, columnIndex]); }
     }
 
     public string Text
@@ -55,7 +59,7 @@ namespace ExcelTableConverter.ExcelContent.Model.InteropWrappers
 
     public int OleFillColor
     {
-      get { return _interopRange.Interior.Color; }
+      get { return (int)_interopRange.Interior.Color; }
     }
   }
 }

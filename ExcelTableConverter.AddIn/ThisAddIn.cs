@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using ExcelTableConverter.ExcelContent.Model;
-using ExcelTableConverter.ExcelContent.Model.InteropWrappers;
+using ExcelTableConverter.Interop.InteropWrappers;
 using ExcelTableConverter.TableConverter;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;

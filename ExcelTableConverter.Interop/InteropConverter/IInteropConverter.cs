@@ -1,4 +1,4 @@
-﻿namespace ExcelTableConverter.ExcelContent.InteropConverter
+﻿namespace ExcelTableConverter.Interop.InteropConverter
 {
   public interface IInteropConverter<in TInterop, out TResult>
   {

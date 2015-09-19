@@ -53,18 +53,10 @@
     <Compile Include="ExtractorDecorators\FillColorExtractor.cs" />
     <Compile Include="ExtractorDecorators\HorizontalAlignmentExtractor.cs" />
     <Compile Include="ExtractorDecorators\TextColorExtractor.cs" />
-    <Compile Include="InteropConverter\BordersInteropConverter.cs" />
-    <Compile Include="InteropConverter\IInteropConverter.cs" />
-    <Compile Include="InteropConverter\RangeInteropConverter.cs" />
-    <Compile Include="InteropConverter\WorksheetInteropConverter.cs" />
     <Compile Include="Model\IBorder.cs" />
     <Compile Include="Model\IFont.cs" />
-    <Compile Include="Model\InteropWrappers\BorderInteropWrapper.cs" />
-    <Compile Include="Model\InteropWrappers\FontInteropWrapper.cs" />
-    <Compile Include="Model\InteropWrappers\WorksheetInteropWrapper.cs" />
     <Compile Include="Model\IRange.cs" />
     <Compile Include="Model\IWorksheet.cs" />
-    <Compile Include="Model\InteropWrappers\RangeInteropWrapper.cs" />
     <Compile Include="Model\RowCollection.cs" />
     <Compile Include="Model\ExcelConstants.cs" />
     <Compile Include="ExtractorDecorators\TextExtractor.cs" />
@@ -76,24 +68,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="Microsoft.Office.Core">
-      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>5</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Excel">
-      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>7</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>5</VersionMajor>

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ExcelTableConverter.ExcelContent.Model;
-using ExcelTableConverter.ExcelContent.Model.InteropWrappers;
+using ExcelTableConverter.Interop.InteropWrappers;
 using Microsoft.Office.Interop.Excel;
 using IBorder = ExcelTableConverter.ExcelContent.Model.IBorder;
 
-namespace ExcelTableConverter.ExcelContent.InteropConverter
+namespace ExcelTableConverter.Interop.InteropConverter
 {
   public class BordersInteropConverter : IInteropConverter<Borders, IDictionary<Cell.BorderPositionEnum, IBorder>>
   {

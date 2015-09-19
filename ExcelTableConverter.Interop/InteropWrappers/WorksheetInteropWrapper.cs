@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ExcelTableConverter.ExcelContent.Model;
 using Microsoft.Office.Interop.Excel;
+using IRange = ExcelTableConverter.ExcelContent.Model.IRange;
 
-namespace ExcelTableConverter.ExcelContent.Model.InteropWrappers
+namespace ExcelTableConverter.Interop.InteropWrappers
 {
   public class WorksheetInteropWrapper : IWorksheet
   {
