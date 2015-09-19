@@ -1,5 +1,4 @@
 ﻿using ExcelTableConverter.ExcelContent.Model;
-using Microsoft.Office.Interop.Excel;
 
 namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
 {
@@ -9,26 +8,10 @@ namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
     {
     }
 
-    public override Cell ExtractExcelCellProperty(Range excelCell)
+    public override Cell ExtractExcelCellProperty(IRange excelCell)
     {
       Cell cell = ExcelReader.ExtractExcelCellProperty(excelCell);
-
-      if (excelCell.HorizontalAlignment == (int)XlHAlign.xlHAlignRight)
-      {
-        cell.HorizontalAlignment = Cell.HorizontalAlignmentEnum.Right;
-      }
-      else if (excelCell.HorizontalAlignment == (int)XlHAlign.xlHAlignCenter)
-      {
-        cell.HorizontalAlignment = Cell.HorizontalAlignmentEnum.Center;
-      }
-      else if (excelCell.HorizontalAlignment == (int) XlHAlign.xlHAlignGeneral)
-      {
-        cell.HorizontalAlignment = Cell.HorizontalAlignmentEnum.General;
-      }
-      else
-      {
-        cell.HorizontalAlignment = Cell.HorizontalAlignmentEnum.Left;
-      }
+      cell.HorizontalAlignment = excelCell.HorizontalAlignment;
       return cell;
     }
   }

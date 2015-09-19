@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using ExcelTableConverter.ExcelContent.Model;
+using ExcelTableConverter.ExcelContent.Model.InteropWrappers;
 using ExcelTableConverter.TableConverter;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
@@ -18,7 +19,7 @@ namespace ExcelTableConverter.AddIn
 
     private void ThisAddIn_Startup(object sender, EventArgs e)
     {
-      ExcelConstants.Worksheet = (Excel.Worksheet) Globals.ThisAddIn.Application.ActiveSheet;
+      ExcelConstants.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet) Globals.ThisAddIn.Application.ActiveSheet);
       ExcelConstants.Selection = new Selection {ColumnCount = 1, RowCount = 1, StartColumn = 1, StartRow = 1};
 
       _cellbar = Application.CommandBars["Cell"];
@@ -55,12 +56,12 @@ namespace ExcelTableConverter.AddIn
 
     private void ApplicationOnWorkbookActivate(Excel.Workbook wb)
     {
-      ExcelConstants.Worksheet = (Excel.Worksheet)wb.ActiveSheet;
+      ExcelConstants.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet)wb.ActiveSheet);
     }
 
     private void ApplicationOnSheetActivate(object sh)
     {
-      ExcelConstants.Worksheet = (Excel.Worksheet)sh;
+      ExcelConstants.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet)sh);
     }
 
 
