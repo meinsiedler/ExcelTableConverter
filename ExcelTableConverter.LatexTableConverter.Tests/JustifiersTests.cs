@@ -66,7 +66,7 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
     {
       var rightJustifier = new RightJustifier();
       Assert.That(rightJustifier.GetAlignment(), Is.EqualTo('r'));
-      Assert.That(rightJustifier.Justify("text"), Is.EqualTo(@"\multicolumn{1}{|r|}{text}"));
+      Assert.That(rightJustifier.Justify("text", true), Is.EqualTo(@"\multicolumn{1}{|r|}{text}"));
     }
 
     [Test]
@@ -74,7 +74,7 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
     {
       var leftJustifier = new LeftJustifier();
       Assert.That(leftJustifier.GetAlignment(), Is.EqualTo('l'));
-      Assert.That(leftJustifier.Justify("text"), Is.EqualTo(@"\multicolumn{1}{|l|}{text}"));
+      Assert.That(leftJustifier.Justify("text", true), Is.EqualTo(@"\multicolumn{1}{|l|}{text}"));
     }
 
     [Test]
@@ -82,9 +82,16 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
     {
       var centerJustifier = new CenterJustifier();
       Assert.That(centerJustifier.GetAlignment(), Is.EqualTo('c'));
-      Assert.That(centerJustifier.Justify("text"), Is.EqualTo(@"\multicolumn{1}{|c|}{text}"));
+      Assert.That(centerJustifier.Justify("text", true), Is.EqualTo(@"\multicolumn{1}{|c|}{text}"));
     }
 
+    [Test]
+    public void CenterJustifier_FormatsCellCenterAligned_WithNoBorders()
+    {
+      var centerJustifier = new CenterJustifier();
+      Assert.That(centerJustifier.GetAlignment(), Is.EqualTo('c'));
+      Assert.That(centerJustifier.Justify("text", false), Is.EqualTo(@"\multicolumn{1}{c}{text}"));
+    }
     
   }
 }

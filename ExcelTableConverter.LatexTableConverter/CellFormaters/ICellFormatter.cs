@@ -4,6 +4,6 @@ namespace ExcelTableConverter.LatexTableConverter.CellFormaters
 {
   interface ICellFormatter
   {
-    string Format(Cell cell, ExtendedFeaturesModel extendedFeatures, Cell firstRowCell);
+    string Format(Cell cell, IExtendedLatexFeaturesModel extendedFeatures, Cell firstRowCell);
   }
 }

@@ -24,7 +24,7 @@ namespace ExcelTableConverter.JiraTableConverter
     public override string GetConvertedContent(Table excelTable)
     {
       StringBuilder str = new StringBuilder();
-      foreach (Row row in excelTable.Rows)
+      foreach (var row in excelTable.Rows)
       {
         foreach (var cell in row.Columns)
         {

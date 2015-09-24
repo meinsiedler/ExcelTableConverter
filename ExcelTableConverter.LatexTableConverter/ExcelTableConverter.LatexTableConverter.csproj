@@ -66,13 +66,14 @@
     <Compile Include="ColorStylers\FillColorStyler.cs" />
     <Compile Include="ColorStylers\TextColorStyler.cs" />
     <Compile Include="EmphTextStylers\CombinedTextStyler.cs" />
-    <Compile Include="ExtendedFeaturesControl.cs">
+    <Compile Include="ExtendedLatexFeaturesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ExtendedFeaturesControl.Designer.cs">
-      <DependentUpon>ExtendedFeaturesControl.cs</DependentUpon>
+    <Compile Include="ExtendedLatexFeaturesControl.Designer.cs">
+      <DependentUpon>ExtendedLatexFeaturesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExtendedFeaturesModel.cs" />
+    <Compile Include="ExtendedLatexFeaturesModel.cs" />
+    <Compile Include="IExtendedLatexFeaturesModel.cs" />
     <Compile Include="Justifiers\Justifier.cs" />
     <Compile Include="Justifiers\JustifierFactory.cs" />
     <Compile Include="Justifiers\LeftJustifier.cs" />
@@ -106,8 +107,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ExtendedFeaturesControl.resx">
-      <DependentUpon>ExtendedFeaturesControl.cs</DependentUpon>
+    <EmbeddedResource Include="ExtendedLatexFeaturesControl.resx">
+      <DependentUpon>ExtendedLatexFeaturesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

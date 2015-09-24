@@ -1,6 +1,6 @@
 ﻿namespace ExcelTableConverter.LatexTableConverter
 {
-  partial class ExtendedFeaturesControl
+  partial class ExtendedLatexFeaturesControl
   {
     /// <summary> 
     /// Required designer variable.
