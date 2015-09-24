@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTableConverter.cs" />
+    <Compile Include="EmphTextStylers\CombinedTextStyler.cs" />
+    <Compile Include="EmphTextStylers\EmphTextStyler.cs" />
     <Compile Include="IExtendedFeaturesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaveUtility.cs" />

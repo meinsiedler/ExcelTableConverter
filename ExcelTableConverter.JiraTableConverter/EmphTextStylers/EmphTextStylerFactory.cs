@@ -3,7 +3,7 @@ using System.Linq;
 using ExcelTableConverter.ExcelContent.Model;
 using ExcelTableConverter.TableConverter.EmphTextStylers;
 
-namespace ExcelTableConverter.LatexTableConverter.EmphTextStylers
+namespace ExcelTableConverter.JiraTableConverter.EmphTextStylers
 {
   public static class EmphTextStylerFactory
   {

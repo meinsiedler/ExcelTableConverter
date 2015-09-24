@@ -30,7 +30,7 @@ namespace ExcelTableConverter.AddIn
         _button = (Office.CommandBarButton)_cellbar.Controls.Add(Office.MsoControlType.msoControlButton, Missing.Value, Missing.Value, _cellbar.Controls.Count, true);
         _button.Caption = "Quick Convert";
         _button.BeginGroup = true;
-        _button.DescriptionText = "Uses the actual ExcelTableConverterRibbon Settings to convert the excel table";
+        _button.DescriptionText = "Uses the actual ExcelTableConverter settings to convert the excel table";
         _button.Picture = ConvertImage.GetIPictureDispImage(Properties.Resources.convert_icon_small);
         _button.Click += QuickConvertButton_Click;
       }

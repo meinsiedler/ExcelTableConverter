@@ -13,7 +13,7 @@ namespace ExcelTableConverter.AddIn
     public void Load()
     {
       new LatexConverter();
-      new JiraWikiConverter();
+      new JiraConverter();
     }
   }
 }

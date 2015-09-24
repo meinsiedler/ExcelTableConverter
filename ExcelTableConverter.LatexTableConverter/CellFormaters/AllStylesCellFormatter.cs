@@ -3,6 +3,7 @@ using ExcelTableConverter.ExcelContent.Model;
 using ExcelTableConverter.LatexTableConverter.ColorStylers;
 using ExcelTableConverter.LatexTableConverter.EmphTextStylers;
 using ExcelTableConverter.LatexTableConverter.Justifiers;
+using ExcelTableConverter.TableConverter.EmphTextStylers;
 
 namespace ExcelTableConverter.LatexTableConverter.CellFormaters
 {

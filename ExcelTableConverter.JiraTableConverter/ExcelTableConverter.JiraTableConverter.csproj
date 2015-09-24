@@ -51,7 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JiraWikiConverter.cs" />
+    <Compile Include="CellFormaters\CellFormatter.cs" />
+    <Compile Include="CellFormaters\ICellFormatter.cs" />
+    <Compile Include="EmphTextStylers\BoldTextStyler.cs" />
+    <Compile Include="EmphTextStylers\EmphTextStylerFactory.cs" />
+    <Compile Include="EmphTextStylers\ItalicTextStyler.cs" />
+    <Compile Include="JiraConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +67,10 @@
     <ProjectReference Include="..\ExcelTableConverter.TableConverter\ExcelTableConverter.TableConverter.csproj">
       <Project>{78cce9df-3098-4169-a94f-fb9f68c00605}</Project>
       <Name>ExcelTableConverter.TableConverter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelTableConverter.Utilities\ExcelTableConverter.Utilities.csproj">
+      <Project>{1DC02672-2201-4F0C-A942-B3A102B3275B}</Project>
+      <Name>ExcelTableConverter.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

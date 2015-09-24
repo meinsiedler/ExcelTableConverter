@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ExcelTableConverter.ExcelContent.Model;
-using ExcelTableConverter.LatexTableConverter.EmphTextStylers;
-using ExcelTableConverter.TableConverter.EmphTextStylers;
+using ExcelTableConverter.JiraTableConverter.EmphTextStylers;
 using NUnit.Framework;
 
-namespace ExcelTableConverter.LatexTableConverter.Tests
+namespace ExcelTableConverter.JiraTableConverter.Tests
 {
   [TestFixture]
   class EmphTextStylerTests
@@ -60,27 +56,27 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
     [Test]
     public void BoldTextStyler_ReturnsFormattedValue()
     {
-      Assert.That(new BoldTextStyler().Style("text"), Is.EqualTo(@"\textbf{text}"));
+      Assert.That(new BoldTextStyler().Style("text"), Is.EqualTo(@"*text*"));
     }
 
     [Test]
     public void ItalicTextStyler_ReturnsFormattedValue()
     {
-      Assert.That(new ItalicTextStyler().Style("text"), Is.EqualTo(@"\textit{text}"));
+      Assert.That(new ItalicTextStyler().Style("text"), Is.EqualTo(@"_text_"));
     }
 
     [Test]
     public void BoldAndItalicCombinedTextStyler_ReturnsFormattedValue()
     {
       var cell = new Cell { Text = "text", TextEmphasis = new List<Cell.EmphasisEnum> { Cell.EmphasisEnum.Bold, Cell.EmphasisEnum.Italic } };
-      Assert.That(EmphTextStylerFactory.GetCombinedTextStyle(cell), Is.EqualTo(@"\textit{\textbf{text}}"));
+      Assert.That(EmphTextStylerFactory.GetCombinedTextStyle(cell), Is.EqualTo(@"_*text*_"));
     }
 
     [Test]
     public void BoldAndItalicCombinedTextStyler_WithExtraSpecified_ReturnsFormattedValue()
     {
       var cell = new Cell { Text = "text", TextEmphasis = new List<Cell.EmphasisEnum> { Cell.EmphasisEnum.Bold, Cell.EmphasisEnum.Italic } };
-      Assert.That(EmphTextStylerFactory.GetCombinedTextStyle(cell, "value"), Is.EqualTo(@"\textit{\textbf{value}}"));
+      Assert.That(EmphTextStylerFactory.GetCombinedTextStyle(cell, "value"), Is.EqualTo(@"_*value*_"));
     }
   }
 }

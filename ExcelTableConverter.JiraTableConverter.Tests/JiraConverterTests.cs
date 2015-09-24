@@ -4,14 +4,14 @@ using NUnit.Framework;
 namespace ExcelTableConverter.JiraTableConverter.Tests
 {
   [TestFixture]
-  public class JiraWikiConverterTests
+  public class JiraConverterTests
   {
-    private JiraWikiConverter _sut;
+    private JiraConverter _sut;
 
     [SetUp]
     public void SetUp()
     {
-      _sut = new JiraWikiConverter();
+      _sut = new JiraConverter();
     }
 
     [Test]

@@ -5,13 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.10.0] - [unreleased]
 
 ### Added
-- "High quality table" border configuration for LaTeX table converter.
+- "High quality table" border configuration for LaTeX table converter. (#3)
+- Bold and italic is considered in Jira table converter. (#10)
 
 ### Changed
-- Convert dialog opens now in the center of the Excel window
+- Convert dialog opens now in the center of the Excel window. (#9)
 
 ### Fixed
-- Grey background in icon for "Quick Convert" context menu entry is now white
+- Grey background in icon for "Quick Convert" context menu entry is now white. (#4)
 
 ## [0.9.0] - 2015-09-15
 ### Added
