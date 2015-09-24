@@ -38,6 +38,8 @@ namespace ExcelTableConverter.AddIn
     {
       InitializeComponent();
 
+      StartPosition = FormStartPosition.CenterParent;
+
       ConverterComboBox.Items.AddRange(ConverterNames());
       if(ConverterComboBox.Items.Count > 0)
       {

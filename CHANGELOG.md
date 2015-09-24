@@ -7,6 +7,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - "High quality table" border configuration for LaTeX table converter.
 
+### Changed
+- Convert dialog opens now in the center of the Excel window
+
 ### Fixed
 - Grey background in icon for "Quick Convert" context menu entry is now white
 
