@@ -44,6 +44,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +58,14 @@
     <Compile Include="EmphTextStylers\BoldTextStyler.cs" />
     <Compile Include="EmphTextStylers\EmphTextStylerFactory.cs" />
     <Compile Include="EmphTextStylers\ItalicTextStyler.cs" />
+    <Compile Include="ExtendedJiraFeatureModel.cs" />
+    <Compile Include="ExtendedJiraFeaturesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExtendedJiraFeaturesControl.Designer.cs">
+      <DependentUpon>ExtendedJiraFeaturesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IExtendedJiraFeatureModel.cs" />
     <Compile Include="JiraConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,6 +82,11 @@
       <Project>{1DC02672-2201-4F0C-A942-B3A102B3275B}</Project>
       <Name>ExcelTableConverter.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExtendedJiraFeaturesControl.resx">
+      <DependentUpon>ExtendedJiraFeaturesControl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

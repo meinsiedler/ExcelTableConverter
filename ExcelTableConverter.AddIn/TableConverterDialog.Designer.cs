@@ -133,11 +133,13 @@
       // extendedFeaturesGroupBox
       // 
       this.extendedFeaturesGroupBox.AutoSize = true;
+      this.extendedFeaturesGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
       this.extendedFeaturesGroupBox.Controls.Add(this.extendedFeaturesPanel);
       this.extendedFeaturesGroupBox.Location = new System.Drawing.Point(12, 217);
       this.extendedFeaturesGroupBox.Margin = new System.Windows.Forms.Padding(12, 3, 12, 12);
+      this.extendedFeaturesGroupBox.MinimumSize = new System.Drawing.Size(259, 20);
       this.extendedFeaturesGroupBox.Name = "extendedFeaturesGroupBox";
-      this.extendedFeaturesGroupBox.Size = new System.Drawing.Size(259, 144);
+      this.extendedFeaturesGroupBox.Size = new System.Drawing.Size(259, 20);
       this.extendedFeaturesGroupBox.TabIndex = 4;
       this.extendedFeaturesGroupBox.TabStop = false;
       this.extendedFeaturesGroupBox.Text = "Extended Features";
@@ -148,7 +150,7 @@
       this.extendedFeaturesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
       this.extendedFeaturesPanel.Location = new System.Drawing.Point(3, 16);
       this.extendedFeaturesPanel.Name = "extendedFeaturesPanel";
-      this.extendedFeaturesPanel.Size = new System.Drawing.Size(253, 125);
+      this.extendedFeaturesPanel.Size = new System.Drawing.Size(253, 1);
       this.extendedFeaturesPanel.TabIndex = 0;
       // 
       // TableConverterDialog
@@ -157,7 +159,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoSize = true;
       this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-      this.ClientSize = new System.Drawing.Size(285, 369);
+      this.ClientSize = new System.Drawing.Size(285, 372);
       this.Controls.Add(this.extendedFeaturesGroupBox);
       this.Controls.Add(this.groupBox4);
       this.Controls.Add(this.groupBox2);
