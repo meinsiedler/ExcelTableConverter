@@ -7,10 +7,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - "High quality table" border configuration for LaTeX table converter. (#3)
 - Bold and italic is considered in Jira table converter. (#10)
-- Jira extended feature: "First row is header" (#6)
+- Jira extended feature: "First row is header". (#6)
 
 ### Changed
 - Convert dialog opens now in the center of the Excel window. (#9)
+- Click on "Save" button with no file specified opens Save dialog. (#11)
 
 ### Fixed
 - Grey background in icon for "Quick Convert" context menu entry is now white. (#4)
