@@ -118,6 +118,11 @@ namespace ExcelTableConverter.AddIn
       }
     }
 
+    private void AboutMenuItem_Click(object sender, EventArgs e)
+    {
+      new AboutBox().ShowDialog();
+    }
+
     
 
   }

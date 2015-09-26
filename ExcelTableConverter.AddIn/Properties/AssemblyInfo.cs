@@ -7,7 +7,7 @@ using System.Security;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ExcelTableConverter.AddIn")]
-[assembly: AssemblyDescription("Converts a Excel table to other table formats")]
+[assembly: AssemblyDescription("Converts an Excel table to other table formats.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ExcelTableConverter")]
