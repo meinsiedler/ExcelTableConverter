@@ -1,12 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ExcelTableConverter.ExcelContent.Model;
+using ExcelTableConverter.TableConverter.EmphTextStylers;
 
 namespace ExcelTableConverter.LatexTableConverter.EmphTextStylers
 {
   public static class EmphTextStylerFactory
   {
-    public static List<EmphTextStyler> GetTextStylers(Cell cell)
+    public static IList<EmphTextStyler> GetTextStylers(Cell cell)
     {
+      if (cell.TextEmphasis == null || !cell.TextEmphasis.Any())
+      {
+        return Enumerable.Empty<EmphTextStyler>().ToList();
+      }
+
       var textStylers = new List<EmphTextStyler>();
       foreach (var emphasisEnum in cell.TextEmphasis)
       {
@@ -14,11 +21,13 @@ namespace ExcelTableConverter.LatexTableConverter.EmphTextStylers
           textStylers.Add(new BoldTextStyler());
         if (emphasisEnum == Cell.EmphasisEnum.Italic)
           textStylers.Add(new ItalicTextStyler());
-        if (emphasisEnum == Cell.EmphasisEnum.None)
-          textStylers.Add(new NoEmphTextStyler());
-
       }
       return textStylers;
+    }
+
+    public static string GetCombinedTextStyle(Cell cell, string value = null)
+    {
+      return new CombinedTextStyler(GetTextStylers(cell)).Style(value ?? cell.Text);
     }
   }
 }

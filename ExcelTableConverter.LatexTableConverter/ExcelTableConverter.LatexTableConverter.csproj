@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,13 +65,15 @@
     <Compile Include="ColorStylers\ColorStyler.cs" />
     <Compile Include="ColorStylers\FillColorStyler.cs" />
     <Compile Include="ColorStylers\TextColorStyler.cs" />
-    <Compile Include="ExtendedFeaturesControl.cs">
+    <Compile Include="EmphTextStylers\EmphTextStylerFactory.cs" />
+    <Compile Include="ExtendedLatexFeaturesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ExtendedFeaturesControl.Designer.cs">
-      <DependentUpon>ExtendedFeaturesControl.cs</DependentUpon>
+    <Compile Include="ExtendedLatexFeaturesControl.Designer.cs">
+      <DependentUpon>ExtendedLatexFeaturesControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExtendedFeaturesModel.cs" />
+    <Compile Include="ExtendedLatexFeaturesModel.cs" />
+    <Compile Include="IExtendedLatexFeaturesModel.cs" />
     <Compile Include="Justifiers\Justifier.cs" />
     <Compile Include="Justifiers\JustifierFactory.cs" />
     <Compile Include="Justifiers\LeftJustifier.cs" />
@@ -73,9 +84,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EmphTextStylers\BoldTextStyler.cs" />
     <Compile Include="EmphTextStylers\ItalicTextStyler.cs" />
-    <Compile Include="EmphTextStylers\NoEmphTextStyler.cs" />
-    <Compile Include="EmphTextStylers\EmphTextStyler.cs" />
-    <Compile Include="EmphTextStylers\EmphTextStylerFactory.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,8 +105,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ExtendedFeaturesControl.resx">
-      <DependentUpon>ExtendedFeaturesControl.cs</DependentUpon>
+    <EmbeddedResource Include="ExtendedLatexFeaturesControl.resx">
+      <DependentUpon>ExtendedLatexFeaturesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

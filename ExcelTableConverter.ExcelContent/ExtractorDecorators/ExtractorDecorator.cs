@@ -2,11 +2,11 @@
 {
   public abstract class ExtractorDecorator : ExcelReader
   {
-    private ExcelReader _excelReader;
+    protected readonly ExcelReader ExcelReader;
 
     protected ExtractorDecorator(ExcelReader excelReader)
     {
-      _excelReader = excelReader;
+      ExcelReader = excelReader;
     }
   }
 }

@@ -73,15 +73,15 @@ namespace ExcelTableConverter.AddIn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap convert_icon_small {
+        internal static System.Drawing.Bitmap convert_icon_white_small {
             get {
-                object obj = ResourceManager.GetObject("convert_icon_small", resourceCulture);
+                object obj = ResourceManager.GetObject("convert_icon_white_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to converting completed.
+        ///   Looks up a localized string similar to Converting completed..
         /// </summary>
         internal static string ConvertingCompleted {
             get {
@@ -90,7 +90,7 @@ namespace ExcelTableConverter.AddIn.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Current converter not set.
+        ///   Looks up a localized string similar to Current converter not set..
         /// </summary>
         internal static string ConvertNotSet {
             get {
@@ -114,15 +114,6 @@ namespace ExcelTableConverter.AddIn.Properties {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to specifiy file first.
-        /// </summary>
-        internal static string SpecifyFileFirst {
-            get {
-                return ResourceManager.GetString("SpecifyFileFirst", resourceCulture);
             }
         }
     }

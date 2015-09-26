@@ -32,9 +32,20 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,7 +53,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JiraWikiConverter.cs" />
+    <Compile Include="CellFormaters\CellFormatter.cs" />
+    <Compile Include="CellFormaters\ICellFormatter.cs" />
+    <Compile Include="EmphTextStylers\BoldTextStyler.cs" />
+    <Compile Include="EmphTextStylers\EmphTextStylerFactory.cs" />
+    <Compile Include="EmphTextStylers\ItalicTextStyler.cs" />
+    <Compile Include="ExtendedJiraFeatureModel.cs" />
+    <Compile Include="ExtendedJiraFeaturesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExtendedJiraFeaturesControl.Designer.cs">
+      <DependentUpon>ExtendedJiraFeaturesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IExtendedJiraFeatureModel.cs" />
+    <Compile Include="JiraConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +78,15 @@
       <Project>{78cce9df-3098-4169-a94f-fb9f68c00605}</Project>
       <Name>ExcelTableConverter.TableConverter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExcelTableConverter.Utilities\ExcelTableConverter.Utilities.csproj">
+      <Project>{1DC02672-2201-4F0C-A942-B3A102B3275B}</Project>
+      <Name>ExcelTableConverter.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExtendedJiraFeaturesControl.resx">
+      <DependentUpon>ExtendedJiraFeaturesControl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

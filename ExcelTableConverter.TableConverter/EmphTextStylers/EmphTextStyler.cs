@@ -1,4 +1,4 @@
-﻿namespace ExcelTableConverter.LatexTableConverter.EmphTextStylers
+﻿namespace ExcelTableConverter.TableConverter.EmphTextStylers
 {
   public abstract class EmphTextStyler
   {

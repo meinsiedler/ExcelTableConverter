@@ -38,6 +38,8 @@ namespace ExcelTableConverter.AddIn
     {
       InitializeComponent();
 
+      StartPosition = FormStartPosition.CenterParent;
+
       ConverterComboBox.Items.AddRange(ConverterNames());
       if(ConverterComboBox.Items.Count > 0)
       {
@@ -60,15 +62,16 @@ namespace ExcelTableConverter.AddIn
 
     private void SaveButton_Click(object sender, EventArgs e)
     {
+      if (string.IsNullOrEmpty(_fileName))
+      {
+        ShowSaveFileDialog();
+      }
+
       if (!string.IsNullOrEmpty(_fileName))
       {
         SaveUtility saveUtility = new SaveUtility(_fileName, BaseTableConverter.GetContent());
         saveUtility.SaveFile();
         MessageBox.Show(Resources.ConvertingCompleted, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-      }
-      else
-      {
-        MessageBox.Show(Resources.SpecifyFileFirst, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
     }
 
@@ -76,7 +79,12 @@ namespace ExcelTableConverter.AddIn
 
     private void BrowseButton_Click(object sender, EventArgs e)
     {
-      if(CurrentConverter != null)
+      ShowSaveFileDialog();
+    }
+
+    private void ShowSaveFileDialog()
+    {
+      if (CurrentConverter != null)
       {
         SaveFileDialog saveFileDialog = new SaveFileDialog();
         saveFileDialog.AddExtension = true;
@@ -86,7 +94,7 @@ namespace ExcelTableConverter.AddIn
         saveFileDialog.CreatePrompt = false;
         saveFileDialog.OverwritePrompt = true;
 
-        if(saveFileDialog.ShowDialog() == DialogResult.OK)
+        if (saveFileDialog.ShowDialog() == DialogResult.OK)
         {
           _fileName = saveFileDialog.FileName;
           FilePathTextBox.Text = _fileName;
@@ -96,8 +104,6 @@ namespace ExcelTableConverter.AddIn
       {
         MessageBox.Show(Resources.ConvertNotSet, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
-
-      
     }
 
     private void copyToClipboard_Click(object sender, EventArgs e)
@@ -110,6 +116,11 @@ namespace ExcelTableConverter.AddIn
       {
         MessageBox.Show(Resources.ConvertNotSet, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
+    }
+
+    private void AboutMenuItem_Click(object sender, EventArgs e)
+    {
+      new AboutBox().ShowDialog();
     }
 
     

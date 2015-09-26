@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace ExcelTableConverter.LatexTableConverter
 {
-  public partial class ExtendedFeaturesControl : UserControl
+  public partial class ExtendedLatexFeaturesControl : UserControl
   {
-    public ExtendedFeaturesControl(bool addTableEnvironment, bool replaceConstants, bool useBorders, bool useColors, bool autoJustify)
+    public ExtendedLatexFeaturesControl(bool addTableEnvironment, bool replaceConstants, bool useBorders, bool useColors, bool autoJustify)
     {
       InitializeComponent();
 

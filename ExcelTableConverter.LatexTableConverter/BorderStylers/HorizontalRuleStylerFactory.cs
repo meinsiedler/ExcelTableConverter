@@ -37,9 +37,8 @@ namespace ExcelTableConverter.LatexTableConverter.BorderStylers
         var solidStyles = new[]{BorderInformation.BorderStyleEnum.Solid, BorderInformation.BorderStyleEnum.DoubleLineSolid};
         var solidPreparedRow = GetPreparedRow(row.Clone(), borderPosition, solidStyles);
         if (ContainsBorderStyle(solidPreparedRow.Columns, borderPosition, solidStyles))
-        {
           ruleStylers.Add(solidPreparedRow, new SolidRuleStyler());
-        }
+        
 
         return ruleStylers;
       }
@@ -51,6 +50,10 @@ namespace ExcelTableConverter.LatexTableConverter.BorderStylers
     {
       foreach (var column in row.Columns)
       {
+        if (!column.Borders.ContainsKey(borderPosition))
+          column.Borders.Add(borderPosition, new BorderInformation {BorderStyle = BorderInformation.BorderStyleEnum.None});
+        
+
         if(!borderStyles.Contains(column.Borders[borderPosition].BorderStyle))
           column.Borders[borderPosition].BorderStyle = BorderInformation.BorderStyleEnum.None;
       }

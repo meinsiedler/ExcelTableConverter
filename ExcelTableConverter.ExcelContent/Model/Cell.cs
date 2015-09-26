@@ -9,10 +9,10 @@ namespace ExcelTableConverter.ExcelContent.Model
   {
     public enum HorizontalAlignmentEnum
     {
+      General,
       Left,
       Center,
-      Right,
-      General
+      Right
     }
 
     public enum VerticalAlignmentEnum

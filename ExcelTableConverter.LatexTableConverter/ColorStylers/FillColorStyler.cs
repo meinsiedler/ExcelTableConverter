@@ -2,7 +2,7 @@
 
 namespace ExcelTableConverter.LatexTableConverter.ColorStylers
 {
-  class FillColorStyler : ColorStyler
+  public class FillColorStyler : ColorStyler
   {
     protected override string ColorizeCommand(Color color, string text)
     {

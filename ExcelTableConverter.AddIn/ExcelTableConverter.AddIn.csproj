@@ -42,7 +42,7 @@
     <PublishUrl>publish\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>0.9.0.0</ApplicationVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -196,7 +196,9 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -214,6 +216,12 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConverterProvider.cs" />
     <Compile Include="ConvertImage.cs">
       <SubType>Component</SubType>
@@ -235,6 +243,9 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExcelTableConverterRibbon.resx">
       <DependentUpon>ExcelTableConverterRibbon.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,7 +262,6 @@
     <EmbeddedResource Include="TableConverterDialog.resx">
       <DependentUpon>TableConverterDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ExcelTableConverter.AddIn_TemporaryKey.pfx" />
     <None Include="ExcelTableConverter.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -274,6 +284,10 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExcelTableConverter.Interop\ExcelTableConverter.Interop.csproj">
+      <Project>{AFADE4FB-426C-4620-BE51-45D2FA0BED2C}</Project>
+      <Name>ExcelTableConverter.Interop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExcelTableConverter.LatexTableConverter\ExcelTableConverter.LatexTableConverter.csproj">
       <Project>{373B62EB-259D-4F3D-800B-F9EEB6B69639}</Project>
       <Name>ExcelTableConverter.LatexTableConverter</Name>
@@ -295,15 +309,23 @@
     <None Include="Resources\convert_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\convert_icon_small.png" />
+    <None Include="Resources\convert_icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\convert_icon.ico" />
+    <None Include="Resources\convert_icon_white.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>VSTO40;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->

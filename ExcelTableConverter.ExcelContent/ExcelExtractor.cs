@@ -1,11 +1,10 @@
 ﻿using ExcelTableConverter.ExcelContent.Model;
-using Microsoft.Office.Interop.Excel;
 
 namespace ExcelTableConverter.ExcelContent
 {
   public class ExcelExtractor : ExcelReader
   {
-    public override Cell ExtractExcelCellProperty(Range excelCell)
+    public override Cell ExtractExcelCellProperty(IRange excelCell)
     {
       return new Cell();
     }

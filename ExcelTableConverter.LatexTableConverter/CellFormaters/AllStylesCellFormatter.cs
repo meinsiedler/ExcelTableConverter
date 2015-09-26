@@ -3,12 +3,13 @@ using ExcelTableConverter.ExcelContent.Model;
 using ExcelTableConverter.LatexTableConverter.ColorStylers;
 using ExcelTableConverter.LatexTableConverter.EmphTextStylers;
 using ExcelTableConverter.LatexTableConverter.Justifiers;
+using ExcelTableConverter.TableConverter.EmphTextStylers;
 
 namespace ExcelTableConverter.LatexTableConverter.CellFormaters
 {
   public class AllStylesCellFormatter : ICellFormatter
   {
-    public string Format(Cell cell, ExtendedFeaturesModel featuresModel, Cell firstRowCell)
+    public string Format(Cell cell, IExtendedLatexFeaturesModel featuresModel, Cell firstRowCell)
     {
       var formattedCellValue = cell.Text;
 
@@ -18,7 +19,7 @@ namespace ExcelTableConverter.LatexTableConverter.CellFormaters
         formattedCellValue = ColorizeCellBackground(cell, formattedCellValue);
       }
       formattedCellValue = EmphasiseCellValue(cell, formattedCellValue);
-      formattedCellValue = JustifyCellValue(cell, featuresModel.AutoJustify, firstRowCell, formattedCellValue);
+      formattedCellValue = JustifyCellValue(cell, featuresModel.AutoJustify, featuresModel.UseBorders, firstRowCell, formattedCellValue);
       
       // TODO: some more formatting - keep reihenfolge in mind (for LaTeX)
 
@@ -39,16 +40,15 @@ namespace ExcelTableConverter.LatexTableConverter.CellFormaters
 
     private string EmphasiseCellValue(Cell cell, string value)
     {
-      var emphTextStylers = EmphTextStylerFactory.GetTextStylers(cell);
-      return emphTextStylers.Aggregate(value, (current, emphTextStyler) => emphTextStyler.Style(current));
+      return EmphTextStylerFactory.GetCombinedTextStyle(cell, value);
     }
 
-    private string JustifyCellValue(Cell cell, bool autoJustify, Cell firstRowCell, string value)
+    private string JustifyCellValue(Cell cell, bool autoJustify, bool useBorders, Cell firstRowCell, string value)
     {
       if (!HorizontalAlignmentsAreEqual(cell, firstRowCell, autoJustify))
       {
         var justifier = JustifierFactory.GetJustifier(cell, autoJustify);
-        return justifier.Justify(value);
+        return justifier.Justify(value, useBorders);
       }
       return value;
     }

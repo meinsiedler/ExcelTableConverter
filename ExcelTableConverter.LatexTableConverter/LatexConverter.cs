@@ -13,14 +13,18 @@ namespace ExcelTableConverter.LatexTableConverter
 {
   public class LatexConverter : BaseTableConverter
   {
-    private readonly ExtendedFeaturesModel _extendedFeatures;
+    private readonly IExtendedLatexFeaturesModel _extendedFeatures;
     private readonly ICellFormatter _cellFormatter;
 
-    public LatexConverter()
+    public LatexConverter() : this(new ExtendedLatexFeaturesModel())
+    {
+    }
+
+    internal LatexConverter(IExtendedLatexFeaturesModel extendedFeatures)
     {
       AddConverter(ConverterName(), this);
-      _extendedFeatures = new ExtendedFeaturesModel();
       _cellFormatter = new AllStylesCellFormatter();
+      _extendedFeatures = extendedFeatures;
     }
 
     private string ConverterName()
@@ -58,7 +62,7 @@ namespace ExcelTableConverter.LatexTableConverter
     private string AppendTableContent(Table table, Row firstRow)
     {
       StringBuilder tableContent = new StringBuilder();
-      foreach (Row row in table.Rows)
+      foreach (var row in table.Rows)
       {
         tableContent.Append(AppendRow(row, firstRow));
       }
@@ -114,7 +118,7 @@ namespace ExcelTableConverter.LatexTableConverter
 
     private string AppendBeginTabular()
     {
-      return "\\begin{tabular}{|";
+      return "\\begin{tabular}{" + AppendVerticalBorders();
     }
 
     private string AppendColumnDefinitions(Row firstRow)
@@ -165,7 +169,7 @@ namespace ExcelTableConverter.LatexTableConverter
 
     private string AppendHorizontalRuleIfSet(Row row, bool useBottomRuleFromRow)
     {
-      if (_extendedFeatures.AddHline)
+      if (_extendedFeatures.AddHlines)
       {
         return "\\hline";
       }

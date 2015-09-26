@@ -1,4 +1,6 @@
-﻿namespace ExcelTableConverter.LatexTableConverter.EmphTextStylers
+﻿using ExcelTableConverter.TableConverter.EmphTextStylers;
+
+namespace ExcelTableConverter.LatexTableConverter.EmphTextStylers
 {
   public class BoldTextStyler : EmphTextStyler
   {

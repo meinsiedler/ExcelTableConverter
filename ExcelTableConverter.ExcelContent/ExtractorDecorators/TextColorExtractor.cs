@@ -1,22 +1,18 @@
 ﻿using ExcelTableConverter.ExcelContent.Model;
-using Microsoft.Office.Interop.Excel;
 
 namespace ExcelTableConverter.ExcelContent.ExtractorDecorators
 {
-  class TextColorExtractor : ExtractorDecorator
+  public class TextColorExtractor : ExtractorDecorator
   {
-    private ExcelReader _excelReader;
-
     public TextColorExtractor(ExcelReader excelReader) : base(excelReader)
     {
-      _excelReader = excelReader;
     }
 
-    public override Cell ExtractExcelCellProperty(Range excelCell)
+    public override Cell ExtractExcelCellProperty(IRange excelCell)
     {
-      Cell cell = _excelReader.ExtractExcelCellProperty(excelCell);
+      Cell cell = ExcelReader.ExtractExcelCellProperty(excelCell);
 
-      cell.TextColor = System.Drawing.ColorTranslator.FromOle((int) excelCell.Font.Color);
+      cell.TextColor = System.Drawing.ColorTranslator.FromOle(excelCell.Font.OleColor);
       return cell;
     }
   }
