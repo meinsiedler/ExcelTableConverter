@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.10.0] - [unreleased]
+## [1.0.0] - 2015-09-26
 
 ### Added
 - Bold and italic is considered in Jira table converter. (#10)
@@ -11,7 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Convert dialog opens now in the center of the Excel window. (#9)
-- Click on "Save" button with no file specified opens Save dialog. (#11)
+- Click on "Save" button with no file specified opens "save file" dialog. (#11)
 
 ### Fixed
 - Grey background in icon for "Quick Convert" context menu entry is now white. (#4)
