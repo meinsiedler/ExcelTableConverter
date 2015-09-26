@@ -307,10 +307,10 @@
     <None Include="Resources\convert_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\convert_icon_small.png" />
+    <None Include="Resources\convert_icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\convert_icon.ico" />
+    <None Include="Resources\convert_icon_white.png" />
   </ItemGroup>
   <!-- Include the build rules for a C# project. -->
   <PropertyGroup>

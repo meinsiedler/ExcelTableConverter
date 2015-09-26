@@ -73,9 +73,9 @@ namespace ExcelTableConverter.AddIn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap convert_icon_small {
+        internal static System.Drawing.Bitmap convert_icon_white_small {
             get {
-                object obj = ResourceManager.GetObject("convert_icon_small", resourceCulture);
+                object obj = ResourceManager.GetObject("convert_icon_white_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

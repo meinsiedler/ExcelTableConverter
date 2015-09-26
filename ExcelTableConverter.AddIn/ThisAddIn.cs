@@ -31,7 +31,7 @@ namespace ExcelTableConverter.AddIn
         _button.Caption = "Quick Convert";
         _button.BeginGroup = true;
         _button.DescriptionText = "Uses the actual ExcelTableConverter settings to convert the excel table";
-        _button.Picture = ConvertImage.GetIPictureDispImage(Properties.Resources.convert_icon_small);
+        _button.Picture = ConvertImage.GetIPictureDispImage(Properties.Resources.convert_icon_white_small);
         _button.Click += QuickConvertButton_Click;
       }
 
