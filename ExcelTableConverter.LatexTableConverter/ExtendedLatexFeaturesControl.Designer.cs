@@ -36,14 +36,17 @@
       this.UseColors = new System.Windows.Forms.CheckBox();
       this.PackageWarningToolTip = new System.Windows.Forms.ToolTip(this.components);
       this.ColorPackageWarningPicture = new System.Windows.Forms.PictureBox();
-      this.BorderPackagesWarningPicture = new System.Windows.Forms.PictureBox();
+      this.FullBorderConfigPackagesWarningPicture = new System.Windows.Forms.PictureBox();
+      this.HighQualityTablePackagesWarningPicture = new System.Windows.Forms.PictureBox();
       this.AutoJustify = new System.Windows.Forms.CheckBox();
       this.UseBorders = new System.Windows.Forms.CheckBox();
       this.NoHLines = new System.Windows.Forms.RadioButton();
       this.AddHLines = new System.Windows.Forms.RadioButton();
       this.FullBorderConfig = new System.Windows.Forms.RadioButton();
+      this.HighQualityTable = new System.Windows.Forms.RadioButton();
       ((System.ComponentModel.ISupportInitialize)(this.ColorPackageWarningPicture)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BorderPackagesWarningPicture)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FullBorderConfigPackagesWarningPicture)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.HighQualityTablePackagesWarningPicture)).BeginInit();
       this.SuspendLayout();
       // 
       // TableCaptionTextBox
@@ -107,18 +110,27 @@
       this.ColorPackageWarningPicture.Size = new System.Drawing.Size(21, 17);
       this.ColorPackageWarningPicture.TabIndex = 6;
       this.ColorPackageWarningPicture.TabStop = false;
-      this.PackageWarningToolTip.SetToolTip(this.ColorPackageWarningPicture, "package \'xcolor\' with optional parameter \'table\'\r\nis required to use this functio" +
-        "nality.");
+      this.PackageWarningToolTip.SetToolTip(this.ColorPackageWarningPicture, "Package \'xcolor\' with parameter \'table\'\r\nis required to use this feature.");
       // 
-      // BorderPackagesWarningPicture
+      // FullBorderConfigPackagesWarningPicture
       // 
-      this.BorderPackagesWarningPicture.Image = global::ExcelTableConverter.LatexTableConverter.Properties.Resources.attention;
-      this.BorderPackagesWarningPicture.Location = new System.Drawing.Point(191, 212);
-      this.BorderPackagesWarningPicture.Name = "BorderPackagesWarningPicture";
-      this.BorderPackagesWarningPicture.Size = new System.Drawing.Size(19, 17);
-      this.BorderPackagesWarningPicture.TabIndex = 12;
-      this.BorderPackagesWarningPicture.TabStop = false;
-      this.PackageWarningToolTip.SetToolTip(this.BorderPackagesWarningPicture, "packages \'hhline\' and \'arydshln\'\r\nare required to use this functionality.");
+      this.FullBorderConfigPackagesWarningPicture.Image = global::ExcelTableConverter.LatexTableConverter.Properties.Resources.attention;
+      this.FullBorderConfigPackagesWarningPicture.Location = new System.Drawing.Point(190, 212);
+      this.FullBorderConfigPackagesWarningPicture.Name = "FullBorderConfigPackagesWarningPicture";
+      this.FullBorderConfigPackagesWarningPicture.Size = new System.Drawing.Size(19, 17);
+      this.FullBorderConfigPackagesWarningPicture.TabIndex = 12;
+      this.FullBorderConfigPackagesWarningPicture.TabStop = false;
+      this.PackageWarningToolTip.SetToolTip(this.FullBorderConfigPackagesWarningPicture, "Packages \'hhline\' and \'arydshln\'\r\nare required to use this feature.");
+      // 
+      // HighQualityTablePackagesWarningPicture
+      // 
+      this.HighQualityTablePackagesWarningPicture.Image = global::ExcelTableConverter.LatexTableConverter.Properties.Resources.attention;
+      this.HighQualityTablePackagesWarningPicture.Location = new System.Drawing.Point(133, 235);
+      this.HighQualityTablePackagesWarningPicture.Name = "HighQualityTablePackagesWarningPicture";
+      this.HighQualityTablePackagesWarningPicture.Size = new System.Drawing.Size(19, 17);
+      this.HighQualityTablePackagesWarningPicture.TabIndex = 14;
+      this.HighQualityTablePackagesWarningPicture.TabStop = false;
+      this.PackageWarningToolTip.SetToolTip(this.HighQualityTablePackagesWarningPicture, "Package \'booktabs\' is required to use this feature.");
       // 
       // AutoJustify
       // 
@@ -176,11 +188,25 @@
       this.FullBorderConfig.UseVisualStyleBackColor = true;
       this.FullBorderConfig.CheckedChanged += new System.EventHandler(this.FullBorderConfig_CheckedChanged);
       // 
-      // ExtendedFeaturesControl
+      // HighQualityTable
+      // 
+      this.HighQualityTable.AutoSize = true;
+      this.HighQualityTable.Location = new System.Drawing.Point(21, 235);
+      this.HighQualityTable.Name = "HighQualityTable";
+      this.HighQualityTable.Size = new System.Drawing.Size(106, 17);
+      this.HighQualityTable.TabIndex = 13;
+      this.HighQualityTable.TabStop = true;
+      this.HighQualityTable.Text = "High quality table";
+      this.HighQualityTable.UseVisualStyleBackColor = true;
+      this.HighQualityTable.CheckedChanged += new System.EventHandler(this.HighQualityTable_CheckedChanged);
+      // 
+      // ExtendedLatexFeaturesControl
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.Controls.Add(this.BorderPackagesWarningPicture);
+      this.Controls.Add(this.HighQualityTablePackagesWarningPicture);
+      this.Controls.Add(this.HighQualityTable);
+      this.Controls.Add(this.FullBorderConfigPackagesWarningPicture);
       this.Controls.Add(this.FullBorderConfig);
       this.Controls.Add(this.AddHLines);
       this.Controls.Add(this.NoHLines);
@@ -192,10 +218,11 @@
       this.Controls.Add(this.AddTableEnvironment);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.TableCaptionTextBox);
-      this.Name = "ExtendedFeaturesControl";
-      this.Size = new System.Drawing.Size(224, 236);
+      this.Name = "ExtendedLatexFeaturesControl";
+      this.Size = new System.Drawing.Size(224, 261);
       ((System.ComponentModel.ISupportInitialize)(this.ColorPackageWarningPicture)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.BorderPackagesWarningPicture)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FullBorderConfigPackagesWarningPicture)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.HighQualityTablePackagesWarningPicture)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -215,7 +242,9 @@
     private System.Windows.Forms.RadioButton NoHLines;
     private System.Windows.Forms.RadioButton AddHLines;
     private System.Windows.Forms.RadioButton FullBorderConfig;
-    private System.Windows.Forms.PictureBox BorderPackagesWarningPicture;
+    private System.Windows.Forms.PictureBox FullBorderConfigPackagesWarningPicture;
+    private System.Windows.Forms.RadioButton HighQualityTable;
+    private System.Windows.Forms.PictureBox HighQualityTablePackagesWarningPicture;
 
 
   }

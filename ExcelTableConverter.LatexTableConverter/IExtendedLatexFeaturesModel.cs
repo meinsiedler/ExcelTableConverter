@@ -16,6 +16,7 @@ namespace ExcelTableConverter.LatexTableConverter
     bool NoHlines { get; }
     bool AddHlines { get; }
     bool FullBorderConfig { get; }
+    bool HighQualityTable { get; }
     bool UseColors { get; }
     bool AutoJustify { get; }
   }

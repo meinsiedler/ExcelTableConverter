@@ -15,8 +15,7 @@ namespace ExcelTableConverter.LatexTableConverter
       
       UseBorders.Checked = useBorders;
       NoHLines.Checked = true;
-      BorderPackagesWarningPicture.Visible = FullBorderConfig.Checked;
-      SetEnabledDisabledWarningPicture(BorderPackagesWarningPicture, FullBorderConfig.Enabled);
+      SetBorderWarningPictures();
       
       UseColors.Checked = useColors;
       ColorPackageWarningPicture.Visible = UseColors.Checked;
@@ -62,6 +61,11 @@ namespace ExcelTableConverter.LatexTableConverter
       return UseBordersChecked() && FullBorderConfig.Checked;
     }
 
+    public bool HighQualityTableChecked()
+    {
+      return UseBordersChecked() && HighQualityTable.Checked;
+    }
+
     public bool UseColorsChecked()
     {
       return UseColors.Checked;
@@ -88,19 +92,30 @@ namespace ExcelTableConverter.LatexTableConverter
       {
         radioButton.Enabled = UseBorders.Checked;
       }
-      BorderPackagesWarningPicture.Enabled = UseBorders.Checked;
-      SetEnabledDisabledWarningPicture(BorderPackagesWarningPicture, FullBorderConfig.Enabled);
+      SetBorderWarningPictures();
     }
 
     private IEnumerable<RadioButton> GetBorderRadioButtons()
     {
-      return new List<RadioButton> {NoHLines, AddHLines, FullBorderConfig};
+      return new List<RadioButton> {NoHLines, AddHLines, FullBorderConfig, HighQualityTable};
     }
 
     private void FullBorderConfig_CheckedChanged(object sender, EventArgs e)
     {
-      BorderPackagesWarningPicture.Visible = FullBorderConfig.Checked;
-    } 
+      FullBorderConfigPackagesWarningPicture.Visible = FullBorderConfig.Checked;
+    }
 
+    private void HighQualityTable_CheckedChanged(object sender, EventArgs e)
+    {
+      HighQualityTablePackagesWarningPicture.Visible = HighQualityTable.Checked;
+    }
+
+    private void SetBorderWarningPictures()
+    {
+      FullBorderConfigPackagesWarningPicture.Visible = FullBorderConfig.Checked;
+      SetEnabledDisabledWarningPicture(FullBorderConfigPackagesWarningPicture, FullBorderConfig.Enabled);
+      HighQualityTablePackagesWarningPicture.Visible = HighQualityTable.Checked;
+      SetEnabledDisabledWarningPicture(HighQualityTablePackagesWarningPicture, HighQualityTable.Enabled);
+    }
   }
 }

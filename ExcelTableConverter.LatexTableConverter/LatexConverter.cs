@@ -46,7 +46,7 @@ namespace ExcelTableConverter.LatexTableConverter
         returnValue.Append(AppendBeginTabular());
         returnValue.Append(AppendColumnDefinitions(table.Rows[0]));
         returnValue.Append(CloseBeginTabular());
-        returnValue.Append(AppendHorizontalRuleIfSet(table.Rows[0], false));
+        returnValue.Append(AppendHorizontalRuleIfSet(table.Rows[0], useBottomRuleFromRow: false, rowCount: 0, totalRows:table.Rows.Count));
         returnValue.Append(AppendNewLine());
 
         returnValue.Append(AppendTableContent(table, table.Rows[0]));
@@ -62,14 +62,15 @@ namespace ExcelTableConverter.LatexTableConverter
     private string AppendTableContent(Table table, Row firstRow)
     {
       StringBuilder tableContent = new StringBuilder();
+      var rowCount = 0;
       foreach (var row in table.Rows)
       {
-        tableContent.Append(AppendRow(row, firstRow));
+        tableContent.Append(AppendRow(row, firstRow, ++rowCount, table.Rows.Count));
       }
       return tableContent.ToString();
     }
 
-    private StringBuilder AppendRow(Row actualRow, Row firstRow)
+    private StringBuilder AppendRow(Row actualRow, Row firstRow, int rowCount, int totalRows)
     {
       StringBuilder rowContent = new StringBuilder();
       var cells = actualRow.Columns as IList<Cell> ?? actualRow.Columns.ToList();
@@ -79,7 +80,7 @@ namespace ExcelTableConverter.LatexTableConverter
         rowContent.Append(AppendValueWithCellSeperator(preparedValue));
       }
       rowContent = RemoveLastCellSeperator(rowContent);
-      rowContent.Append(AppendQuitLineAndAddHorizontalRuleIfSet(actualRow));
+      rowContent.Append(AppendQuitLineAndAddHorizontalRuleIfSet(actualRow, rowCount, totalRows));
       rowContent.Append(AppendNewLine());
       return rowContent;
     }
@@ -113,7 +114,20 @@ namespace ExcelTableConverter.LatexTableConverter
 
     private string AppendBeginTableEnvironmentIfSet()
     {
-      return _extendedFeatures.AddTableEnvironment ? "\\begin{table}[!ht]"+ AppendNewLine() + "\\centering" + AppendNewLine() : string.Empty;
+      if (!_extendedFeatures.AddTableEnvironment)
+        return string.Empty;
+
+      var builder = new StringBuilder("\\begin{table}[!ht]");
+      builder.Append(AppendNewLine());
+      if (_extendedFeatures.HighQualityTable)
+      {
+        builder.Append("\\renewcommand{\\arraystretch}{1.2}");
+        builder.Append(AppendNewLine());
+      }
+      builder.Append("\\centering");
+      builder.Append(AppendNewLine());
+
+      return builder.ToString();
     }
 
     private string AppendBeginTabular()
@@ -123,20 +137,31 @@ namespace ExcelTableConverter.LatexTableConverter
 
     private string AppendColumnDefinitions(Row firstRow)
     {
-      var columns = "";
+      var builder = new StringBuilder();
 
-      foreach (Cell cell in firstRow.Columns)
+      if (_extendedFeatures.HighQualityTable)
+      {
+        builder.Append(GetColumnSpaceRemovalChars());
+      }
+
+      foreach (var cell in firstRow.Columns)
       {
         var justifier = JustifierFactory.GetJustifier(cell, _extendedFeatures.AutoJustify);
-        columns += justifier.GetAlignment();
-        columns += AppendVerticalBorders();
+        builder.Append(justifier.GetAlignment());
+        builder.Append(AppendVerticalBorders());
       }
-      return columns;
+
+      if (_extendedFeatures.HighQualityTable)
+      {
+        builder.Append(GetColumnSpaceRemovalChars());
+      }
+
+      return builder.ToString();
     }
 
     private string AppendVerticalBorders()
     {
-      return _extendedFeatures.UseBorders ? "|" : string.Empty;
+      return _extendedFeatures.UseBorders && !_extendedFeatures.HighQualityTable ? "|" : string.Empty;
     }
 
     private string CloseBeginTabular()
@@ -167,7 +192,7 @@ namespace ExcelTableConverter.LatexTableConverter
       return fullBorders.ToString();
     }
 
-    private string AppendHorizontalRuleIfSet(Row row, bool useBottomRuleFromRow)
+    private string AppendHorizontalRuleIfSet(Row row, bool useBottomRuleFromRow, int rowCount, int totalRows)
     {
       if (_extendedFeatures.AddHlines)
       {
@@ -178,12 +203,23 @@ namespace ExcelTableConverter.LatexTableConverter
       {
         return AppendFullBorderConfig(row, useBottomRuleFromRow);
       }
+
+      if (_extendedFeatures.HighQualityTable)
+      {
+        if(rowCount == 0)
+          return "\\toprule";
+        if (rowCount == 1)
+          return "\\midrule";
+        if (rowCount == totalRows)
+          return "\\bottomrule";
+      }
+
       return string.Empty;
     }
 
-    private string AppendQuitLineAndAddHorizontalRuleIfSet(Row row)
+    private string AppendQuitLineAndAddHorizontalRuleIfSet(Row row, int rowCount, int totalRows)
     {
-      return string.Format("\\\\{0}", AppendHorizontalRuleIfSet(row, true));
+      return string.Format("\\\\{0}", AppendHorizontalRuleIfSet(row, true, rowCount, totalRows));
     }
 
     private string AppendNewLine()
@@ -223,6 +259,11 @@ namespace ExcelTableConverter.LatexTableConverter
     private string AppendEndTable()
     {
       return "\\end{table}";
+    }
+
+    private string GetColumnSpaceRemovalChars()
+    {
+      return "@{}";
     }
 
     public override string GetFileExtension()

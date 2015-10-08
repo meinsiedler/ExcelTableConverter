@@ -40,6 +40,11 @@ namespace ExcelTableConverter.LatexTableConverter
       get { return ((ExtendedLatexFeaturesControl) BoundExtendedFeaturesUserControl).FullBorderConfigChecked(); }
     }
 
+    public bool HighQualityTable
+    {
+      get { return ((ExtendedLatexFeaturesControl) BoundExtendedFeaturesUserControl).HighQualityTableChecked();  }
+    }
+
     public bool UseColors
     {
       get { return ((ExtendedLatexFeaturesControl) BoundExtendedFeaturesUserControl).UseColorsChecked(); }
