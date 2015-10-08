@@ -117,7 +117,7 @@ namespace ExcelTableConverter.LatexTableConverter
       if (!_extendedFeatures.AddTableEnvironment)
         return string.Empty;
 
-      var builder = new StringBuilder("\\begin{table}[!ht]");
+      var builder = new StringBuilder("\\begin{table}");
       builder.Append(AppendNewLine());
       if (_extendedFeatures.HighQualityTable)
       {

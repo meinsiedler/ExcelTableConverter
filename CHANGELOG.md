@@ -7,6 +7,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - "High quality table" border configuration for LatexTableConverter. (#3)
 
+### Changed
+- LatexTableConverter: Removed `[!ht]` option from table environment. (#13)
+
 ## [1.0.0] - 2015-09-26
 
 ### Added
