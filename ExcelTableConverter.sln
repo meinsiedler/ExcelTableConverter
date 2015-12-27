@@ -27,6 +27,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.ExcelCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.Interop", "ExcelTableConverter.Interop\ExcelTableConverter.Interop.csproj", "{AFADE4FB-426C-4620-BE51-45D2FA0BED2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.MarkdownTableConverter", "ExcelTableConverter.MarkdownTableConverter\ExcelTableConverter.MarkdownTableConverter.csproj", "{54C2F794-0302-4D34-95A9-270339F80572}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TableConverters", "TableConverters", "{B7C2F4F8-4704-42AA-A4B8-240ADA421DA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelTableConverter.MarkdownTableConverter.Tests", "ExcelTableConverter.MarkdownTableConverter.Tests\ExcelTableConverter.MarkdownTableConverter.Tests.csproj", "{76B754AD-5F15-4319-BE0D-35B4F4BA9B59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,8 +110,29 @@ Global
 		{AFADE4FB-426C-4620-BE51-45D2FA0BED2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFADE4FB-426C-4620-BE51-45D2FA0BED2C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AFADE4FB-426C-4620-BE51-45D2FA0BED2C}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{54C2F794-0302-4D34-95A9-270339F80572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54C2F794-0302-4D34-95A9-270339F80572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54C2F794-0302-4D34-95A9-270339F80572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54C2F794-0302-4D34-95A9-270339F80572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54C2F794-0302-4D34-95A9-270339F80572}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{54C2F794-0302-4D34-95A9-270339F80572}.Test|Any CPU.Build.0 = Release|Any CPU
+		{76B754AD-5F15-4319-BE0D-35B4F4BA9B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B754AD-5F15-4319-BE0D-35B4F4BA9B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B754AD-5F15-4319-BE0D-35B4F4BA9B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B754AD-5F15-4319-BE0D-35B4F4BA9B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B754AD-5F15-4319-BE0D-35B4F4BA9B59}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{76B754AD-5F15-4319-BE0D-35B4F4BA9B59}.Test|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78CCE9DF-3098-4169-A94F-FB9F68C00605} = {B7C2F4F8-4704-42AA-A4B8-240ADA421DA0}
+		{373B62EB-259D-4F3D-800B-F9EEB6B69639} = {B7C2F4F8-4704-42AA-A4B8-240ADA421DA0}
+		{F891E848-52FA-4E53-99F3-2E8644A95F89} = {B7C2F4F8-4704-42AA-A4B8-240ADA421DA0}
+		{77F14EB5-CAF9-4411-8467-0B8185B1C73B} = {B7C2F4F8-4704-42AA-A4B8-240ADA421DA0}
+		{AE12E998-615E-47E1-9083-985B58CDE4D4} = {B7C2F4F8-4704-42AA-A4B8-240ADA421DA0}
+		{54C2F794-0302-4D34-95A9-270339F80572} = {B7C2F4F8-4704-42AA-A4B8-240ADA421DA0}
+		{76B754AD-5F15-4319-BE0D-35B4F4BA9B59} = {B7C2F4F8-4704-42AA-A4B8-240ADA421DA0}
 	EndGlobalSection
 EndGlobal
