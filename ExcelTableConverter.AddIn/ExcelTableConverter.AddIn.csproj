@@ -226,8 +226,9 @@
     <Compile Include="ConvertImage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DefaultConverterLoader.cs" />
+    <Compile Include="NewOperatorConverterLoader.cs" />
     <Compile Include="IConverterLoader.cs" />
+    <Compile Include="ReflectionConverterLoader.cs" />
     <Compile Include="TableConverterDialog.cs">
       <SubType>Form</SubType>
     </Compile>

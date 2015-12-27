@@ -16,6 +16,18 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
     }
 
     [Test]
+    public void ConverterName_ReturnsMarkdown()
+    {
+      Assert.That(new LatexConverter().ConverterName, Is.EqualTo("LaTeX"));
+    }
+
+    [Test]
+    public void ToString_ReturnsMarkdown()
+    {
+      Assert.That(new LatexConverter().ToString(), Is.EqualTo("LaTeX"));
+    }
+
+    [Test]
     public void GetFileExtension_ReturnsTex()
     {
       var result = new LatexConverter().GetFileExtension();

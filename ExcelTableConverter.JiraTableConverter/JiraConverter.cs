@@ -19,18 +19,17 @@ namespace ExcelTableConverter.JiraTableConverter
     internal JiraConverter(IExtendedJiraFeatureModel extendedFeatures)
     {
       _extendedFeatures = extendedFeatures;
-      AddConverter(ConverterName(), this);
       _cellFormatter = new CellFormatter();
     }
 
-    private string ConverterName()
+    public override string ConverterName
     {
-      return "Atlassian Jira";
+      get { return "Atlassian Jira"; }
     }
 
     public override string ToString()
     {
-      return ConverterName();
+      return ConverterName;
     }
 
     public override string GetConvertedContent(Table excelTable)

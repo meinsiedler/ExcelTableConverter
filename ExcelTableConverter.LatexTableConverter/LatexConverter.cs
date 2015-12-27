@@ -22,19 +22,18 @@ namespace ExcelTableConverter.LatexTableConverter
 
     internal LatexConverter(IExtendedLatexFeaturesModel extendedFeatures)
     {
-      AddConverter(ConverterName(), this);
       _cellFormatter = new AllStylesCellFormatter();
       _extendedFeatures = extendedFeatures;
     }
 
-    private string ConverterName()
+    public override string ConverterName
     {
-      return "LaTeX";
+      get { return "LaTeX"; }
     }
 
     public override string ToString()
     {
-      return ConverterName();
+      return ConverterName;
     }
 
     public override string GetConvertedContent(Table table)
