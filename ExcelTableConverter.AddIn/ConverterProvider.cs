@@ -54,7 +54,7 @@ namespace ExcelTableConverter.AddIn
     public string GetContent()
     {
       ExcelReader excelReader = ExcelReaderFactory.CreateExcelReader();
-      return CurrentConverter.GetConvertedContent(excelReader.GetExcelTable(ExcelConstants.Worksheet, ExcelConstants.Selection));
+      return CurrentConverter.GetConvertedContent(excelReader.GetExcelTable(ExcelProperties.Instance.Worksheet, ExcelProperties.Instance.Selection));
     }
 
     public IEnumerable<string> GetConverterNames()

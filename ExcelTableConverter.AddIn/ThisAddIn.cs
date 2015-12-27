@@ -19,8 +19,8 @@ namespace ExcelTableConverter.AddIn
 
     private void ThisAddIn_Startup(object sender, EventArgs e)
     {
-      ExcelConstants.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet) Globals.ThisAddIn.Application.ActiveSheet);
-      ExcelConstants.Selection = new Selection {ColumnCount = 1, RowCount = 1, StartColumn = 1, StartRow = 1};
+      ExcelProperties.Instance.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet)Globals.ThisAddIn.Application.ActiveSheet);
+      ExcelProperties.Instance.Selection = new Selection { ColumnCount = 1, RowCount = 1, StartColumn = 1, StartRow = 1 };
 
       _cellbar = Application.CommandBars["Cell"];
       _button = (Office.CommandBarButton)_cellbar.FindControl(Office.MsoControlType.msoControlButton, 0, "MYRIGHTCLICKMENU", Missing.Value, Missing.Value);
@@ -44,7 +44,7 @@ namespace ExcelTableConverter.AddIn
 
     private void ApplicationOnSheetSelectionChange(object sh, Excel.Range target)
     {
-      ExcelConstants.Selection = new Selection
+      ExcelProperties.Instance.Selection = new Selection
         {
           ColumnCount = target.Columns.Count,
           RowCount = target.Rows.Count,
@@ -56,12 +56,12 @@ namespace ExcelTableConverter.AddIn
 
     private void ApplicationOnWorkbookActivate(Excel.Workbook wb)
     {
-      ExcelConstants.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet)wb.ActiveSheet);
+      ExcelProperties.Instance.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet)wb.ActiveSheet);
     }
 
     private void ApplicationOnSheetActivate(object sh)
     {
-      ExcelConstants.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet)sh);
+      ExcelProperties.Instance.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet)sh);
     }
 
 

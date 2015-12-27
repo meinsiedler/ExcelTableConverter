@@ -67,7 +67,7 @@
     <Compile Include="Model\IRange.cs" />
     <Compile Include="Model\IWorksheet.cs" />
     <Compile Include="Model\RowCollection.cs" />
-    <Compile Include="Model\ExcelConstants.cs" />
+    <Compile Include="Model\ExcelProperties.cs" />
     <Compile Include="ExtractorDecorators\TextExtractor.cs" />
     <Compile Include="Model\BorderInformation.cs" />
     <Compile Include="Model\Cell.cs" />
