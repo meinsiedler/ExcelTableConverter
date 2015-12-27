@@ -1,7 +1,10 @@
-﻿namespace ExcelTableConverter.AddIn
+﻿using System.Collections.Generic;
+using ExcelTableConverter.TableConverter;
+
+namespace ExcelTableConverter.AddIn
 {
   public interface IConverterLoader
   {
-    void Load();
+    IEnumerable<BaseTableConverter> GetConverters();
   }
 }

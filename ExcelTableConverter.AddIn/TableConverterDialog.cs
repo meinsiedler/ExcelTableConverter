@@ -9,30 +9,7 @@ namespace ExcelTableConverter.AddIn
   public partial class TableConverterDialog : Form
   {
     private string _fileName;
-
     private UserControl _extendedFeaturesUserControl;
-
-
-    private BaseTableConverter CurrentConverter
-    {
-      get { return BaseTableConverter.CurrentConverter; }
-      set
-      {
-        BaseTableConverter.CurrentConverter = value;
-        _extendedFeaturesUserControl = BaseTableConverter.CurrentConverter.ExtendedFeaturesUserControl;
-        extendedFeaturesPanel.Controls.Clear();
-        if (_extendedFeaturesUserControl != null)
-        {
-          extendedFeaturesGroupBox.Visible = true;
-          extendedFeaturesGroupBox.Text = string.Format("Extended \"{0}\" Features", CurrentConverter);
-          extendedFeaturesPanel.Controls.Add(_extendedFeaturesUserControl);
-        }
-        else
-        {
-          extendedFeaturesGroupBox.Visible = false;
-        }
-      }
-    }
 
     public TableConverterDialog()
     {
@@ -40,24 +17,30 @@ namespace ExcelTableConverter.AddIn
 
       StartPosition = FormStartPosition.CenterParent;
 
-      ConverterComboBox.Items.AddRange(ConverterNames());
+      ConverterComboBox.Items.AddRange(ConverterProvider.Instance.GetConverterNames().Cast<object>().ToArray());
       if(ConverterComboBox.Items.Count > 0)
       {
         ConverterComboBox.SelectedIndex = 0;
       }
-
     }
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
-      CurrentConverter = BaseTableConverter.Converters[ConverterComboBox.SelectedItem.ToString()];
+      ConverterProvider.Instance.SetCurrentConverter(ConverterComboBox.SelectedItem.ToString());
+      _extendedFeaturesUserControl = ConverterProvider.Instance.CurrentConverter.ExtendedFeaturesUserControl;
+      extendedFeaturesPanel.Controls.Clear();
+      if (_extendedFeaturesUserControl != null)
+      {
+        extendedFeaturesGroupBox.Visible = true;
+        extendedFeaturesGroupBox.Text = string.Format("Extended \"{0}\" Features", ConverterProvider.Instance.CurrentConverter);
+        extendedFeaturesPanel.Controls.Add(_extendedFeaturesUserControl);
+      }
+      else
+      {
+        extendedFeaturesGroupBox.Visible = false;
+      }
       _fileName = string.Empty;
       FilePathTextBox.Text = string.Empty;
-    }
-
-    private object[] ConverterNames()
-    {
-      return BaseTableConverter.Converters.Select(converter => converter.Key).Cast<object>().ToArray();
     }
 
     private void SaveButton_Click(object sender, EventArgs e)
@@ -69,13 +52,11 @@ namespace ExcelTableConverter.AddIn
 
       if (!string.IsNullOrEmpty(_fileName))
       {
-        SaveUtility saveUtility = new SaveUtility(_fileName, BaseTableConverter.GetContent());
+        SaveUtility saveUtility = new SaveUtility(_fileName, ConverterProvider.Instance.GetContent());
         saveUtility.SaveFile();
         MessageBox.Show(Resources.ConvertingCompleted, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
     }
-
-
 
     private void BrowseButton_Click(object sender, EventArgs e)
     {
@@ -84,12 +65,12 @@ namespace ExcelTableConverter.AddIn
 
     private void ShowSaveFileDialog()
     {
-      if (CurrentConverter != null)
+      if (ConverterProvider.Instance.CurrentConverter != null)
       {
         SaveFileDialog saveFileDialog = new SaveFileDialog();
         saveFileDialog.AddExtension = true;
-        saveFileDialog.Filter = string.Format("{0} files (*.{1})|*.{1}", CurrentConverter,
-                                              CurrentConverter.GetFileExtension());
+        saveFileDialog.Filter = string.Format("{0} files (*.{1})|*.{1}", ConverterProvider.Instance.CurrentConverter,
+                                              ConverterProvider.Instance.CurrentConverter.GetFileExtension());
         saveFileDialog.CheckFileExists = false;
         saveFileDialog.CreatePrompt = false;
         saveFileDialog.OverwritePrompt = true;
@@ -108,9 +89,9 @@ namespace ExcelTableConverter.AddIn
 
     private void copyToClipboard_Click(object sender, EventArgs e)
     {
-      if (CurrentConverter != null)
+      if (ConverterProvider.Instance.CurrentConverter != null)
       {
-        Clipboard.SetText(BaseTableConverter.GetContent());
+        Clipboard.SetText(ConverterProvider.Instance.GetContent());
       }
       else
       {
@@ -122,8 +103,5 @@ namespace ExcelTableConverter.AddIn
     {
       new AboutBox().ShowDialog();
     }
-
-    
-
   }
 }

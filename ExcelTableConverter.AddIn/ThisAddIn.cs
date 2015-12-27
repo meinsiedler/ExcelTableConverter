@@ -35,7 +35,7 @@ namespace ExcelTableConverter.AddIn
         _button.Click += QuickConvertButton_Click;
       }
 
-      BaseTableConverter.CurrentConverter = BaseTableConverter.Converters.First().Value;
+      //BaseTableConverter.CurrentConverter = BaseTableConverter.Converters.First().Value;
 
       Globals.ThisAddIn.Application.SheetSelectionChange += ApplicationOnSheetSelectionChange;
       Globals.ThisAddIn.Application.WorkbookActivate += ApplicationOnWorkbookActivate;
@@ -72,7 +72,7 @@ namespace ExcelTableConverter.AddIn
 
     private void QuickConvertButton_Click(Office.CommandBarButton cmdBarbutton, ref bool cancel)
     {
-      Clipboard.SetText(BaseTableConverter.GetContent());
+      Clipboard.SetText(ConverterProvider.Instance.GetContent());
     }
 
     

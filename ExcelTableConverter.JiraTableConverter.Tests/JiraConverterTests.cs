@@ -16,6 +16,18 @@ namespace ExcelTableConverter.JiraTableConverter.Tests
     }
 
     [Test]
+    public void ConverterName_ReturnsMarkdown()
+    {
+      Assert.That(new JiraConverter().ConverterName, Is.EqualTo("Atlassian Jira"));
+    }
+
+    [Test]
+    public void ToString_ReturnsMarkdown()
+    {
+      Assert.That(new JiraConverter().ToString(), Is.EqualTo("Atlassian Jira"));
+    }
+
+    [Test]
     public void GetFileExtension_ReturnsTxt()
     {
       var result = new JiraConverter().GetFileExtension();
