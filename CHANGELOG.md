@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - "High quality table" border configuration for LatexTableConverter. (#3)
+- Added new target table format: Markdown (#14)
 
 ### Changed
 - LatexTableConverter: Removed `[!ht]` option from table environment. (#13)
