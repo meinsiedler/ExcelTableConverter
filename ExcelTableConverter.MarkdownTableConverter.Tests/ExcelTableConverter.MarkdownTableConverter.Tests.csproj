@@ -49,6 +49,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExcelTableConverter.ExcelContent\ExcelTableConverter.ExcelContent.csproj">
+      <Project>{809adf53-7ea4-4b37-a7d6-354861859a8e}</Project>
+      <Name>ExcelTableConverter.ExcelContent</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExcelTableConverter.MarkdownTableConverter\ExcelTableConverter.MarkdownTableConverter.csproj">
       <Project>{54C2F794-0302-4D34-95A9-270339F80572}</Project>
       <Name>ExcelTableConverter.MarkdownTableConverter</Name>
@@ -56,6 +60,10 @@
     <ProjectReference Include="..\ExcelTableConverter.TableConverter\ExcelTableConverter.TableConverter.csproj">
       <Project>{78cce9df-3098-4169-a94f-fb9f68c00605}</Project>
       <Name>ExcelTableConverter.TableConverter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExcelTableConverter.TestsCommon\ExcelTableConverter.TestsCommon.csproj">
+      <Project>{0C74A974-C498-4CDB-B901-A64D030D0FE6}</Project>
+      <Name>ExcelTableConverter.TestsCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

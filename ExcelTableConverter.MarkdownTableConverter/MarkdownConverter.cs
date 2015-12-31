@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ExcelTableConverter.ExcelContent.Model;
 using ExcelTableConverter.TableConverter;
+using ExcelTableConverter.Utilities;
 
 namespace ExcelTableConverter.MarkdownTableConverter
 {
@@ -22,7 +23,46 @@ namespace ExcelTableConverter.MarkdownTableConverter
 
     public override string GetConvertedContent(Table excelTable)
     {
-      return "Not implemented yet!";
+      ArgumentUtility.EnsureNotNull(excelTable, "excelTable");
+
+      var str = new StringBuilder();
+      var isFirstRow = true;
+      foreach (var row in excelTable.Rows)
+      {
+        foreach (var cell in row.Columns)
+        {
+          str.Append(string.Format("{0} {1} ", GetColumnSeparator(), PrepareCellValue(cell)));
+        }
+        str.AppendLine(GetColumnSeparator());
+        if (isFirstRow)
+        {
+          str.AppendLine(GetHeaderSeparator(row));
+        }
+        isFirstRow = false;
+      }
+      return str.ToString();
+    }
+
+    private string PrepareCellValue(Cell cell)
+    {
+      return cell.Text;
+    }
+
+    private string GetColumnSeparator()
+    {
+      return "|";
+    }
+
+    private string GetHeaderSeparator(Row row)
+    {
+      var str = new StringBuilder();
+      var spacesReplacementLength = 2;
+      foreach (var cell in row.Columns)
+      {
+        str.Append(string.Format("{0}{1}", GetColumnSeparator(), new string('-', cell.Text.Length + spacesReplacementLength)));
+      }
+      str.Append(GetColumnSeparator());
+      return str.ToString();
     }
 
     public override string GetFileExtension()

@@ -51,6 +51,10 @@
       <Project>{78CCE9DF-3098-4169-A94F-FB9F68C00605}</Project>
       <Name>ExcelTableConverter.TableConverter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExcelTableConverter.Utilities\ExcelTableConverter.Utilities.csproj">
+      <Project>{1DC02672-2201-4F0C-A942-B3A102B3275B}</Project>
+      <Name>ExcelTableConverter.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
