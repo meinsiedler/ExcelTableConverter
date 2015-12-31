@@ -39,6 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CellFormatters\CellFormatter.cs" />
+    <Compile Include="CellFormatters\ICellFormatter.cs" />
+    <Compile Include="EmphTextStylers\BoldTextStyler.cs" />
+    <Compile Include="EmphTextStylers\EmphTextStylerFactory.cs" />
+    <Compile Include="EmphTextStylers\ItalicTextStyler.cs" />
     <Compile Include="MarkdownConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,6 +61,7 @@
       <Name>ExcelTableConverter.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

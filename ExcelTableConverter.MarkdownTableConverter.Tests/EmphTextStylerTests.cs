@@ -1,13 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using ExcelTableConverter.ExcelContent.Model;
-using ExcelTableConverter.JiraTableConverter.EmphTextStylers;
+using ExcelTableConverter.MarkdownTableConverter.EmphTextStylers;
 using NUnit.Framework;
 
-namespace ExcelTableConverter.JiraTableConverter.Tests
+namespace ExcelTableConverter.MarkdownTableConverter.Tests
 {
   [TestFixture]
-  class EmphTextStylerTests
+  internal class EmphTextStylerTests
   {
     private TableConverter.EmphTextStylers.EmphTextStylerFactory _emphTextStylerFactory;
 
@@ -29,7 +32,7 @@ namespace ExcelTableConverter.JiraTableConverter.Tests
     [Test]
     public void EmphTextStylerFactory_WithItalic_GetsItalicTextStyler()
     {
-      var cell = new Cell { Text = "test", TextEmphasis = new List<Cell.EmphasisEnum> { Cell.EmphasisEnum.Italic } };
+      var cell = new Cell {Text = "test", TextEmphasis = new List<Cell.EmphasisEnum> {Cell.EmphasisEnum.Italic}};
       var emphTextStylers = _emphTextStylerFactory.GetTextStylers(cell);
       Assert.That(emphTextStylers.Count, Is.EqualTo(1));
       Assert.That(emphTextStylers.First(), Is.TypeOf<ItalicTextStyler>());
@@ -38,7 +41,11 @@ namespace ExcelTableConverter.JiraTableConverter.Tests
     [Test]
     public void EmphTextStylerFactory_WithBoldAndItalic_GetsBoldAndItalicTextStyler()
     {
-      var cell = new Cell { Text = "test", TextEmphasis = new List<Cell.EmphasisEnum> { Cell.EmphasisEnum.Bold, Cell.EmphasisEnum.Italic } };
+      var cell = new Cell
+      {
+        Text = "test",
+        TextEmphasis = new List<Cell.EmphasisEnum> {Cell.EmphasisEnum.Bold, Cell.EmphasisEnum.Italic}
+      };
       var emphTextStylers = _emphTextStylerFactory.GetTextStylers(cell);
       Assert.That(emphTextStylers.Count, Is.EqualTo(2));
       Assert.That(emphTextStylers.First(), Is.TypeOf<BoldTextStyler>());
@@ -48,7 +55,7 @@ namespace ExcelTableConverter.JiraTableConverter.Tests
     [Test]
     public void EmphTextStylerFactory_WithNoEmph_GetsEmptyList()
     {
-      var cell = new Cell { Text = "test" };
+      var cell = new Cell {Text = "test"};
       var emphTextStylers = _emphTextStylerFactory.GetTextStylers(cell);
       Assert.That(emphTextStylers.Any(), Is.False);
     }
@@ -56,7 +63,7 @@ namespace ExcelTableConverter.JiraTableConverter.Tests
     [Test]
     public void EmphTextStylerFactory_WithNoneEmphasisEnum_GetsEmptyList()
     {
-      var cell = new Cell { Text = "test", TextEmphasis = new List<Cell.EmphasisEnum>{ Cell.EmphasisEnum.None }};
+      var cell = new Cell {Text = "test", TextEmphasis = new List<Cell.EmphasisEnum> {Cell.EmphasisEnum.None}};
       var emphTextStylers = _emphTextStylerFactory.GetTextStylers(cell);
       Assert.That(emphTextStylers.Any(), Is.False);
     }
@@ -64,27 +71,35 @@ namespace ExcelTableConverter.JiraTableConverter.Tests
     [Test]
     public void BoldTextStyler_ReturnsFormattedValue()
     {
-      Assert.That(new BoldTextStyler().Style("text"), Is.EqualTo(@"*text*"));
+      Assert.That(new BoldTextStyler().Style("text"), Is.EqualTo(@"**text**"));
     }
 
     [Test]
     public void ItalicTextStyler_ReturnsFormattedValue()
     {
-      Assert.That(new ItalicTextStyler().Style("text"), Is.EqualTo(@"_text_"));
+      Assert.That(new ItalicTextStyler().Style("text"), Is.EqualTo(@"*text*"));
     }
 
     [Test]
     public void BoldAndItalicCombinedTextStyler_ReturnsFormattedValue()
     {
-      var cell = new Cell { Text = "text", TextEmphasis = new List<Cell.EmphasisEnum> { Cell.EmphasisEnum.Bold, Cell.EmphasisEnum.Italic } };
-      Assert.That(_emphTextStylerFactory.GetCombinedTextStyle(cell), Is.EqualTo(@"_*text*_"));
+      var cell = new Cell
+      {
+        Text = "text",
+        TextEmphasis = new List<Cell.EmphasisEnum> {Cell.EmphasisEnum.Bold, Cell.EmphasisEnum.Italic}
+      };
+      Assert.That(_emphTextStylerFactory.GetCombinedTextStyle(cell), Is.EqualTo(@"***text***"));
     }
 
     [Test]
     public void BoldAndItalicCombinedTextStyler_WithExtraSpecified_ReturnsFormattedValue()
     {
-      var cell = new Cell { Text = "text", TextEmphasis = new List<Cell.EmphasisEnum> { Cell.EmphasisEnum.Bold, Cell.EmphasisEnum.Italic } };
-      Assert.That(_emphTextStylerFactory.GetCombinedTextStyle(cell, "value"), Is.EqualTo(@"_*value*_"));
+      var cell = new Cell
+      {
+        Text = "text",
+        TextEmphasis = new List<Cell.EmphasisEnum> {Cell.EmphasisEnum.Bold, Cell.EmphasisEnum.Italic}
+      };
+      Assert.That(_emphTextStylerFactory.GetCombinedTextStyle(cell, "value"), Is.EqualTo(@"***value***"));
     }
   }
 }

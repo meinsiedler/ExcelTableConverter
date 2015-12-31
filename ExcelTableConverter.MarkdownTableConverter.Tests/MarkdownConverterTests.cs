@@ -43,8 +43,8 @@ namespace ExcelTableConverter.MarkdownTableConverter.Tests
     {
       var markdownConverter = new MarkdownConverter();
 
-      var expected = "| 1 1 | 1 2 | 1 3 | 1 4 | 1 5 |\r\n|-----|-----|-----|-----|-----|\r\n| 2 1 | 2 2 | 2 3 | 2 4 | 2 5 |\r\n| 3 1 | 3 2 | 3 3 | 3 4 | 3 5 |\r\n| 4 1 | 4 2 | 4 3 | 4 4 | 4 5 |\r\n";
-      var result = markdownConverter.GetConvertedContent(Constants.GetSimpleTable());
+      var expected = "| 1 | 20% | 1 3 | 1 4 | 1 5 |\r\n|---|-----|-----|-----|-----|\r\n| **2 1** | *2 2* | ***2 3*** | 2 4 | 2 5 |\r\n| 3 1 | 3 2 | 3 3 | 3 4 | 3 5 |\r\n| 4 1 | 4 2 | 4 3 | 4 4 | 4 5 |\r\n";
+      var result = markdownConverter.GetConvertedContent(Constants.GetTableWithAllFeatures());
       Assert.That(result, Is.EqualTo(expected));
     }
   }

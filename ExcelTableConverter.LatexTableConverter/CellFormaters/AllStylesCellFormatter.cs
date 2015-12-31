@@ -4,6 +4,7 @@ using ExcelTableConverter.LatexTableConverter.ColorStylers;
 using ExcelTableConverter.LatexTableConverter.EmphTextStylers;
 using ExcelTableConverter.LatexTableConverter.Justifiers;
 using ExcelTableConverter.TableConverter.EmphTextStylers;
+using EmphTextStylerFactory = ExcelTableConverter.LatexTableConverter.EmphTextStylers.EmphTextStylerFactory;
 
 namespace ExcelTableConverter.LatexTableConverter.CellFormaters
 {
@@ -40,7 +41,7 @@ namespace ExcelTableConverter.LatexTableConverter.CellFormaters
 
     private string EmphasiseCellValue(Cell cell, string value)
     {
-      return EmphTextStylerFactory.GetCombinedTextStyle(cell, value);
+      return new EmphTextStylerFactory().GetCombinedTextStyle(cell, value);
     }
 
     private string JustifyCellValue(Cell cell, bool autoJustify, bool useBorders, Cell firstRowCell, string value)

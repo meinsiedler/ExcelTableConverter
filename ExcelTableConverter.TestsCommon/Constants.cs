@@ -7,7 +7,7 @@ namespace ExcelTableConverter.TestsCommon
 {
   public class Constants
   {
-    public static Table GetSimpleTable()
+    private static Table GetSimpleTable()
     {
       int maxColumns = 5;
       int maxRows = 4;
@@ -34,12 +34,16 @@ namespace ExcelTableConverter.TestsCommon
     public static Table GetTableWithAllFeatures()
     {
       var table = GetSimpleTable();
-      table.Rows[0].Columns[0].Text = "1";              // number (justify right)
-      table.Rows[0].Columns[1].Text = "20%";           // special char
-      table.Rows[0].Columns[2].FillColor = Color.Aqua;  // fill color
-      table.Rows[0].Columns[3].TextColor = Color.Red;   // text color
-      table.Rows[0].Columns[4].FillColor = Color.Aqua;  // fill color ...
-      table.Rows[0].Columns[4].TextColor = Color.Red;   // ... and text color
+      table.Rows[0].Columns[0].Text = "1";                                              // number (justify right)
+      table.Rows[0].Columns[1].Text = "20%";                                            // special char
+      table.Rows[0].Columns[2].FillColor = Color.Aqua;                                  // fill color
+      table.Rows[0].Columns[3].TextColor = Color.Red;                                   // text color
+      table.Rows[0].Columns[4].FillColor = Color.Aqua;                                  // fill color ...
+      table.Rows[0].Columns[4].TextColor = Color.Red;                                   // ... and text color
+      table.Rows[1].Columns[0].TextEmphasis.AddRange(new []{Cell.EmphasisEnum.Bold});   // bold
+      table.Rows[1].Columns[1].TextEmphasis.AddRange(new []{Cell.EmphasisEnum.Italic}); // italics
+      table.Rows[1].Columns[2].TextEmphasis.AddRange(new []{Cell.EmphasisEnum.Bold});   // bold ...
+      table.Rows[1].Columns[2].TextEmphasis.AddRange(new []{Cell.EmphasisEnum.Italic}); // ... and italics
 
       // add some BorderInformation for FullBorderConfig
       table.Rows[0].Columns[0].Borders.Add(Cell.BorderPositionEnum.Top,

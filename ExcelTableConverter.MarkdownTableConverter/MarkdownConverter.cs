@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ExcelTableConverter.ExcelContent.Model;
+using ExcelTableConverter.MarkdownTableConverter.CellFormatters;
 using ExcelTableConverter.TableConverter;
 using ExcelTableConverter.Utilities;
 
@@ -11,6 +12,13 @@ namespace ExcelTableConverter.MarkdownTableConverter
 {
   public class MarkdownConverter : BaseTableConverter
   {
+    private ICellFormatter _cellFormatter;
+
+    public MarkdownConverter()
+    {
+      _cellFormatter = new CellFormatter();
+    }
+
     public override string ConverterName
     {
       get { return "Markdown"; }
@@ -45,7 +53,7 @@ namespace ExcelTableConverter.MarkdownTableConverter
 
     private string PrepareCellValue(Cell cell)
     {
-      return cell.Text;
+      return _cellFormatter.Format(cell);
     }
 
     private string GetColumnSeparator()
