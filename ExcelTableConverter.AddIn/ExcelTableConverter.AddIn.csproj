@@ -297,6 +297,10 @@
       <Project>{809ADF53-7EA4-4B37-A7D6-354861859A8E}</Project>
       <Name>ExcelTableConverter.ExcelContent</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ExcelTableConverter.MarkdownTableConverter\ExcelTableConverter.MarkdownTableConverter.csproj">
+      <Project>{54C2F794-0302-4D34-95A9-270339F80572}</Project>
+      <Name>ExcelTableConverter.MarkdownTableConverter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExcelTableConverter.TableConverter\ExcelTableConverter.TableConverter.csproj">
       <Project>{78CCE9DF-3098-4169-A94F-FB9F68C00605}</Project>
       <Name>ExcelTableConverter.TableConverter</Name>

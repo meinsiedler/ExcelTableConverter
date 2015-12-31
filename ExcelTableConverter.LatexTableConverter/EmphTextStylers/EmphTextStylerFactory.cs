@@ -5,29 +5,16 @@ using ExcelTableConverter.TableConverter.EmphTextStylers;
 
 namespace ExcelTableConverter.LatexTableConverter.EmphTextStylers
 {
-  public static class EmphTextStylerFactory
+  public class EmphTextStylerFactory : TableConverter.EmphTextStylers.EmphTextStylerFactory
   {
-    public static IList<EmphTextStyler> GetTextStylers(Cell cell)
+    protected override EmphTextStyler GetBoldTextStyler()
     {
-      if (cell.TextEmphasis == null || !cell.TextEmphasis.Any())
-      {
-        return Enumerable.Empty<EmphTextStyler>().ToList();
-      }
-
-      var textStylers = new List<EmphTextStyler>();
-      foreach (var emphasisEnum in cell.TextEmphasis)
-      {
-        if (emphasisEnum == Cell.EmphasisEnum.Bold)
-          textStylers.Add(new BoldTextStyler());
-        if (emphasisEnum == Cell.EmphasisEnum.Italic)
-          textStylers.Add(new ItalicTextStyler());
-      }
-      return textStylers;
+      return new BoldTextStyler();
     }
 
-    public static string GetCombinedTextStyle(Cell cell, string value = null)
+    protected override EmphTextStyler GetItalicTextStyler()
     {
-      return new CombinedTextStyler(GetTextStylers(cell)).Style(value ?? cell.Text);
+      return new ItalicTextStyler();
     }
   }
 }

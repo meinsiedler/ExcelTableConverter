@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ExcelTableConverter.ExcelContent.Model;
-using ExcelTableConverter.JiraTableConverter.EmphTextStylers;
+using ExcelTableConverter.MarkdownTableConverter.EmphTextStylers;
 
-namespace ExcelTableConverter.JiraTableConverter.CellFormaters
+
+namespace ExcelTableConverter.MarkdownTableConverter.CellFormatters
 {
   public class CellFormatter : ICellFormatter
   {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using ExcelTableConverter.JiraTableConverter;
 using ExcelTableConverter.LatexTableConverter;
+using ExcelTableConverter.MarkdownTableConverter;
 using ExcelTableConverter.TableConverter;
 
 namespace ExcelTableConverter.AddIn
@@ -13,6 +14,7 @@ namespace ExcelTableConverter.AddIn
       {
         new LatexConverter(),
         new JiraConverter(),
+        new MarkdownConverter()
       };
     }
   }

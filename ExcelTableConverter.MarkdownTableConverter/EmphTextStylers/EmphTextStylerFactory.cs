@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using ExcelTableConverter.ExcelContent.Model;
+using System.Text;
+using System.Threading.Tasks;
 using ExcelTableConverter.TableConverter.EmphTextStylers;
 
-namespace ExcelTableConverter.JiraTableConverter.EmphTextStylers
+namespace ExcelTableConverter.MarkdownTableConverter.EmphTextStylers
 {
   public class EmphTextStylerFactory : TableConverter.EmphTextStylers.EmphTextStylerFactory
   {
