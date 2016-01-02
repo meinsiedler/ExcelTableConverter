@@ -1,0 +1,9 @@
+version: 1.1.{build}
+configuration: Test
+environment:
+  solutionFile: Source\ExcelTableConverter.sln
+before_build:
+- cmd: nuget restore %solutionFile%
+build:
+  project: $(solutionFile)
+  verbosity: minimal

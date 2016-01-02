@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{809ADF53-7EA4-4B37-A7D6-354861859A8E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExcelTableConverter.ExcelContent</RootNamespace>
+    <AssemblyName>ExcelTableConverter.ExcelContent</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExtractorDecorators\BorderExtractor.cs" />
+    <Compile Include="ExtractorDecorators\EmphasisExtractor.cs" />
+    <Compile Include="ExcelExtractor.cs" />
+    <Compile Include="ExcelReader.cs" />
+    <Compile Include="ExcelReaderFactory.cs" />
+    <Compile Include="ExtractorDecorators\ExtractorDecorator.cs" />
+    <Compile Include="ExtractorDecorators\FillColorExtractor.cs" />
+    <Compile Include="ExtractorDecorators\HorizontalAlignmentExtractor.cs" />
+    <Compile Include="ExtractorDecorators\TextColorExtractor.cs" />
+    <Compile Include="Model\IBorder.cs" />
+    <Compile Include="Model\IFont.cs" />
+    <Compile Include="Model\IRange.cs" />
+    <Compile Include="Model\IWorksheet.cs" />
+    <Compile Include="Model\RowCollection.cs" />
+    <Compile Include="Model\ExcelProperties.cs" />
+    <Compile Include="ExtractorDecorators\TextExtractor.cs" />
+    <Compile Include="Model\BorderInformation.cs" />
+    <Compile Include="Model\Cell.cs" />
+    <Compile Include="Model\Row.cs" />
+    <Compile Include="Model\Selection.cs" />
+    <Compile Include="Model\Table.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExcelTableConverter.Utilities\ExcelTableConverter.Utilities.csproj">
+      <Project>{1DC02672-2201-4F0C-A942-B3A102B3275B}</Project>
+      <Name>ExcelTableConverter.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
