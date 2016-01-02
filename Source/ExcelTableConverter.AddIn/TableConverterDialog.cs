@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using ExcelTableConverter.AddIn.Properties;
@@ -14,14 +15,31 @@ namespace ExcelTableConverter.AddIn
     public TableConverterDialog()
     {
       InitializeComponent();
-
-      StartPosition = FormStartPosition.CenterParent;
+      
+      StartPosition = FormStartPosition.Manual;
 
       ConverterComboBox.Items.AddRange(ConverterProvider.Instance.GetConverterNames().Cast<object>().ToArray());
       if(ConverterComboBox.Items.Count > 0)
       {
         ConverterComboBox.SelectedIndex = 0;
       }
+    }
+
+    public void SetLocation(Screen screen, Point applicationLocation, double applicationWidth, double applicationHeight)
+    {
+      const double pointsPerInch = 72.0;
+      var pixelFactor = GetDpiX(screen) / pointsPerInch;
+      var x = pixelFactor * applicationLocation.X + (pixelFactor * applicationWidth - Width) / 2;
+      var y = pixelFactor * applicationLocation.Y + (pixelFactor * applicationHeight - Height) / 2;
+      Location = new Point((int)x, (int)y);
+    }
+
+    public double GetDpiX(Screen screen)
+    {
+      uint dpiX;
+      uint dpiY;
+      screen.GetDpi(DpiType.Effective, out dpiX, out dpiY);
+      return Convert.ToDouble(dpiX);
     }
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,6 +120,18 @@ namespace ExcelTableConverter.AddIn
     private void AboutMenuItem_Click(object sender, EventArgs e)
     {
       new AboutBox().ShowDialog();
+    }
+
+    private void TableConverterDialog_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      if (e.CloseReason != CloseReason.UserClosing)
+      {
+        // close form properly when anything else except the user closes the form (e.g. TaskManger, Application.Exit(), ...)
+        return;
+      }
+        
+      Hide();
+      e.Cancel = true;
     }
   }
 }

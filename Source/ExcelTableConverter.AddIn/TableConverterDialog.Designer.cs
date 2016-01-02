@@ -178,7 +178,7 @@
       // AboutMenuItem
       // 
       this.AboutMenuItem.Name = "AboutMenuItem";
-      this.AboutMenuItem.Size = new System.Drawing.Size(152, 22);
+      this.AboutMenuItem.Size = new System.Drawing.Size(107, 22);
       this.AboutMenuItem.Text = "About";
       this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
       // 
@@ -200,6 +200,7 @@
       this.MaximizeBox = false;
       this.Name = "TableConverterDialog";
       this.Text = "Convert";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TableConverterDialog_FormClosing);
       this.groupBox1.ResumeLayout(false);
       this.groupBox2.ResumeLayout(false);
       this.groupBox2.PerformLayout();

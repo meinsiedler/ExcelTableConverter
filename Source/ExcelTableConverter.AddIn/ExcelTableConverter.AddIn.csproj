@@ -229,6 +229,7 @@
     <Compile Include="NewOperatorConverterLoader.cs" />
     <Compile Include="IConverterLoader.cs" />
     <Compile Include="ReflectionConverterLoader.cs" />
+    <Compile Include="ScreenExtensions.cs" />
     <Compile Include="TableConverterDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +245,7 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Win32Window.cs" />
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>

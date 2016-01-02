@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - LatexTableConverter: Removed `[!ht]` option from table environment. (#13)
+- Convert dialog is now non-modal (#16)
 
 ## [1.0.0] - 2015-09-26
 
