@@ -96,5 +96,15 @@ namespace ExcelTableConverter.AddIn
     {
       Process.Start(licenseLinkLabel.Links[0].LinkData.ToString());
     }
+
+    private void releasesLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Process.Start("https://github.com/meinsiedler/ExcelTableConverter/releases");
+    }
+
+    private void changelogLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      Process.Start("https://github.com/meinsiedler/ExcelTableConverter/blob/master/CHANGELOG.md");
+    }
   }
 }
