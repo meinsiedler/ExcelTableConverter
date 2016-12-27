@@ -19,7 +19,6 @@ namespace ExcelTableConverter.AddIn
     public static IPictureDisp GetIPictureDispImage(Bitmap bitmap)
     {
       Bitmap newIcon = bitmap;
-      newIcon.MakeTransparent();
       ImageList newImageList = new ImageList();
       newImageList.Images.Add(newIcon);
       IPictureDisp tempImage = Convert(newImageList.Images[0]);
