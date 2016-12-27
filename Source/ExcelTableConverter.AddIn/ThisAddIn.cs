@@ -22,24 +22,28 @@ namespace ExcelTableConverter.AddIn
       ExcelProperties.Instance.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet)Globals.ThisAddIn.Application.ActiveSheet);
       ExcelProperties.Instance.Selection = new Selection { ColumnCount = 1, RowCount = 1, StartColumn = 1, StartRow = 1 };
 
+      Globals.ThisAddIn.Application.SheetSelectionChange += ApplicationOnSheetSelectionChange;
+      Globals.ThisAddIn.Application.WorkbookActivate += ApplicationOnWorkbookActivate;
+      Globals.ThisAddIn.Application.SheetActivate += ApplicationOnSheetActivate;
+    }
+
+    private void EnsureQuickConvertButton()
+    {
+      const string quickConvertRightClickTag = "QUICKCONVERTRIGHTCLICKMENU";
       _cellbar = Application.CommandBars["Cell"];
-      _button = (Office.CommandBarButton)_cellbar.FindControl(Office.MsoControlType.msoControlButton, 0, "MYRIGHTCLICKMENU", Missing.Value, Missing.Value);
+      _cellbar.Reset();
+      _button = (Office.CommandBarButton)_cellbar.FindControl(Office.MsoControlType.msoControlButton, 0, quickConvertRightClickTag, Missing.Value, Missing.Value);
       if (_button == null)
       {
         // add the button
         _button = (Office.CommandBarButton)_cellbar.Controls.Add(Office.MsoControlType.msoControlButton, Missing.Value, Missing.Value, _cellbar.Controls.Count, true);
         _button.Caption = "Quick Convert";
         _button.BeginGroup = true;
+        _button.Tag = quickConvertRightClickTag;
         _button.DescriptionText = "Uses the actual ExcelTableConverter settings to convert the excel table";
         _button.Picture = ConvertImage.GetIPictureDispImage(Properties.Resources.convert_icon_white_small);
         _button.Click += QuickConvertButton_Click;
       }
-
-      //BaseTableConverter.CurrentConverter = BaseTableConverter.Converters.First().Value;
-
-      Globals.ThisAddIn.Application.SheetSelectionChange += ApplicationOnSheetSelectionChange;
-      Globals.ThisAddIn.Application.WorkbookActivate += ApplicationOnWorkbookActivate;
-      Globals.ThisAddIn.Application.SheetActivate += ApplicationOnSheetActivate;
     }
 
     private void ApplicationOnSheetSelectionChange(object sh, Excel.Range target)
@@ -57,13 +61,13 @@ namespace ExcelTableConverter.AddIn
     private void ApplicationOnWorkbookActivate(Excel.Workbook wb)
     {
       ExcelProperties.Instance.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet)wb.ActiveSheet);
+      EnsureQuickConvertButton();
     }
 
     private void ApplicationOnSheetActivate(object sh)
     {
       ExcelProperties.Instance.Worksheet = new WorksheetInteropWrapper((Excel.Worksheet)sh);
     }
-
 
     private void ThisAddIn_Shutdown(object sender, EventArgs e)
     {
@@ -74,8 +78,6 @@ namespace ExcelTableConverter.AddIn
     {
       Clipboard.SetText(ConverterProvider.Instance.GetContent());
     }
-
-    
 
     #region VSTO generated code
 

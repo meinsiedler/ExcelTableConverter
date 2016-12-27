@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.0] - [unreleased]
+
+### Fixed
+- Quick Convert does not work properly on multiple Excel instances. (#17)
+
 ## [1.1.0] - 2016-01-02
 
 ### Added
