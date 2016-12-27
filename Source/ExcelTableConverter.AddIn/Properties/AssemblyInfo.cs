@@ -11,7 +11,7 @@ using System.Security;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ExcelTableConverter")]
-[assembly: AssemblyCopyright("Copyright © Michael Einsiedler 2015")]
+[assembly: AssemblyCopyright("Copyright © Michael Einsiedler 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
