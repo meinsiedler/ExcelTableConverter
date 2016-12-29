@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Threading;
+using ExcelTableConverter.ExcelContent.Model;
 using ExcelTableConverter.TestsCommon;
 using FakeItEasy;
 using NUnit.Framework;
@@ -72,6 +73,31 @@ namespace ExcelTableConverter.LatexTableConverter.Tests
 
       var expected = "\\begin{tabular}{lllll}\r\n\r\n1 & 20\\% & 1 3 & 1 4 & 1 5 \\\\\r\n\\textbf{2 1} & \\textit{2 2} & \\textit{\\textbf{2 3}} & 2 4 & 2 5 \\\\\r\n3 1 & 3 2 & 3 3 & 3 4 & 3 5 \\\\\r\n4 1 & 4 2 & 4 3 & 4 4 & 4 5 \\\\\r\n\r\n\\end{tabular}";
       var result = latexConverter.GetConvertedContent(Constants.GetTableWithAllFeatures());
+      Assert.That(result, Is.EqualTo(expected));
+    }
+
+    [TestCase("%", "\\%")]
+    [TestCase("&", "\\&")]
+    [TestCase("€", "\\geneuro")]
+    [TestCase("{", "\\{")]
+    [TestCase("}", "\\}")]
+    [TestCase("_", "\\textunderscore")]
+    [TestCase("#", "\\#")]
+    [TestCase("$", "\\$")]
+    public void GetConvertedContent_WithReplaceConstants_ExtendedFeature(string cellInput, string expectedCellOutput)
+    {
+      var extendedFeaturesModel = A.Fake<IExtendedLatexFeaturesModel>();
+      A.CallTo(() => extendedFeaturesModel.TableName).Returns("SheetName");
+      A.CallTo(() => extendedFeaturesModel.ReplaceConstants).Returns(true);
+
+      var latexConverter = new LatexConverter(extendedFeaturesModel);
+
+      var table = new Table("simple table", 1, 1);
+      table.Rows[0].Columns[0].Text = cellInput;
+
+      var result = latexConverter.GetConvertedContent(table);
+
+      var expected = string.Format("\\begin{{tabular}}{{l}}\r\n\r\n{0} \\\\\r\n\r\n\\end{{tabular}}", expectedCellOutput);
       Assert.That(result, Is.EqualTo(expected));
     }
 

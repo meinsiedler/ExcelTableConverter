@@ -10,9 +10,11 @@ namespace ExcelTableConverter.LatexTableConverter
         {"&", @"\&"},
         //{@"\", @"\textbackslash"}, // TODO: replaces % -> \% -> \textbackslash%; do not touch already replaces strings
         {"€", @"\geneuro"},
+        {"$", @"\$"},
         {@"{", @"\{"},
         {@"}", @"\}"},
         {"_", @"\textunderscore"},
+        {"#", @"\#"},
       };
   }
 }

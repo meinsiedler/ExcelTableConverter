@@ -7,6 +7,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Added link to releases and changelog in About window. (#19)
 
+### Changed
+- Added hash (`#`) and dollar (`$`) symbol to list of LaTeX special chars. (#20)
+
 ### Fixed
 - Quick Convert does not work properly on multiple Excel instances. (#17)
 
